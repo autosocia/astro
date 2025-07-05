@@ -81,13 +81,7 @@ function App() {
             } />
 
             {/* Life Predictions Route */}
-            <Route path="/life-predictions" element={
-              <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
-                <Navbar />
-                <LifePredictionPage />
-                <Footer />
-              </div>
-            } />
+            <Route path="/life-predictions" element={<ProtectedRoute><LifePredictionPage /></ProtectedRoute>} />
 
             {/* New Protected Feature Routes */}
             <Route path="/kundli-matching" element={
