@@ -512,7 +512,7 @@ const KundliPage = () => {
           <h4 className="text-lg font-semibold text-amber-400 mb-4">Premium Services</h4>
           <div className="space-y-3">
             {[
-              { name: 'AstroSage Brihat Kundli', price: '₹299' },
+              { name: 'Astro Brihat Kundli', price: '₹299' },
               { name: 'Personalized Horoscope 2025', price: '₹499' },
               { name: 'Career Analysis Report', price: '₹399' },
               { name: 'Marriage Compatibility', price: '₹599' }
@@ -530,12 +530,12 @@ const KundliPage = () => {
 
   const renderAboutSection = () => (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-8">
-      <h3 className="text-xl font-display font-semibold text-white mb-6">About AstroSage</h3>
+      <h3 className="text-xl font-display font-semibold text-white mb-6">About Astro</h3>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <p className="text-white/80 leading-relaxed mb-4">
-            AstroSage is India's leading astrology platform, providing accurate Vedic astrology services 
+            Astro is India's leading astrology platform, providing accurate Vedic astrology services 
             and predictions. With Dr. Roohi Jain's expertise, we offer comprehensive astrological solutions 
             for all your life questions.
           </p>
@@ -649,7 +649,7 @@ const KundliPage = () => {
         {/* Footer */}
         <div className="text-center mt-12 py-8 border-t border-white/20">
           <p className="text-white/60 text-sm">
-            All copyrights reserved © 2025 AstroSage - Dr. Roohi Jain
+            All copyrights reserved © 2025 Astro - Dr. Roohi Jain
           </p>
         </div>
       </div>
