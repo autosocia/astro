@@ -6,9 +6,9 @@ import { getAnalytics } from 'firebase/analytics';
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAxjXe_HvqPjI38Pgkx5tsow2HaniV1Pjo",
-  authDomain: "Astro.firebaseapp.com",
-  projectId: "Astro",
-  storageBucket: "Astro.firebasestorage.app",
+  authDomain: "silvyastro.firebaseapp.com",
+  projectId: "silvyastro",
+  storageBucket: "silvyastro.firebasestorage.app",
   messagingSenderId: "368957227231",
   appId: "1:368957227231:web:eff05873fdcfd29d96696a",
   measurementId: "G-G97V3ZYWRM"
