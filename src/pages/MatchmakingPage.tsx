@@ -8,8 +8,8 @@ import { calculateGunaScores, calculateMatchingResult } from '../utils/gunaCalcu
 const MatchmakingPage = () => {
   // ... [rest of the code remains exactly the same]
   return (
-    <div className="w-full max-w-none">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {renderHeader()}
 
         {!showResults ? (

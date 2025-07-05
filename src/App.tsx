@@ -107,77 +107,41 @@ function App() {
               </div>
             } />
 
-            {/* Public Legacy Routes for non-authenticated users */}
-            <Route path="/public/kundli" element={
+            {/* Legacy Routes (keeping for compatibility) - Now public with Navbar/Footer */}
+            <Route path="/kundli" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <KundliPage />
                 <Footer />
               </div>
             } />
-            <Route path="/public/matchmaking" element={
+            <Route path="/matchmaking" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <MatchmakingPage />
                 <Footer />
               </div>
             } />
-            <Route path="/public/chatbot" element={
+            <Route path="/chatbot" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <ChatbotPage />
                 <Footer />
               </div>
             } />
-            <Route path="/public/consultation" element={
+            <Route path="/consultation" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <ConsultationPage />
                 <Footer />
               </div>
             } />
-            <Route path="/public/shop" element={
+            <Route path="/shop" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <ShopPage />
                 <Footer />
               </div>
-            } />
-            {/* Legacy Routes (keeping for compatibility) */}
-            <Route path="/kundli" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <KundliPage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
-            <Route path="/matchmaking" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <MatchmakingPage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
-            <Route path="/chatbot" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <ChatbotPage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
-            <Route path="/consultation" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <ConsultationPage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
-            <Route path="/shop" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <ShopPage />
-                </DashboardLayout>
-              </ProtectedRoute>
             } />
 
             {/* Settings Route */}

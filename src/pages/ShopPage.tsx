@@ -14,8 +14,8 @@ const ShopPage = () => {
   ];
 
   return (
-    <div className="w-full max-w-none">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
             Spiritual Store
