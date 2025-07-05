@@ -197,6 +197,7 @@ const ChatbotPage = () => {
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };
