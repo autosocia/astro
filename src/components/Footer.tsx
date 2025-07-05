@@ -37,11 +37,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-display font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/public/kundli" className="text-gray-400 hover:text-violet-400 transition-colors">Birth Chart</Link></li>
-              <li><Link to="/public/matchmaking" className="text-gray-400 hover:text-violet-400 transition-colors">Matchmaking</Link></li>
-              <li><Link to="/public/chatbot" className="text-gray-400 hover:text-violet-400 transition-colors">AI Astrologer</Link></li>
-              <li><Link to="/public/consultation" className="text-gray-400 hover:text-violet-400 transition-colors">Consultation</Link></li>
-              <li><Link to="/public/shop" className="text-gray-400 hover:text-violet-400 transition-colors">Gemstones</Link></li>
+              <li><Link to="/kundli" className="text-gray-400 hover:text-violet-400 transition-colors">Birth Chart</Link></li>
+              <li><Link to="/matchmaking" className="text-gray-400 hover:text-violet-400 transition-colors">Matchmaking</Link></li>
+              <li><Link to="/chatbot" className="text-gray-400 hover:text-violet-400 transition-colors">AI Astrologer</Link></li>
+              <li><Link to="/consultation" className="text-gray-400 hover:text-violet-400 transition-colors">Consultation</Link></li>
+              <li><Link to="/shop" className="text-gray-400 hover:text-violet-400 transition-colors">Gemstones</Link></li>
             </ul>
           </div>
 

@@ -19,19 +19,19 @@ const HomePage = () => {
       icon: Star,
       title: 'Birth Chart Analysis',
       description: 'Generate detailed Kundli with Vedic calculations, planetary positions, and personalized insights.',
-      link: '/public/kundli'
+      link: '/kundli'
     },
     {
       icon: Heart,
       title: 'Matchmaking',
       description: 'Find your perfect match with Guna Milan compatibility analysis and relationship insights.',
-      link: '/public/matchmaking'
+      link: '/matchmaking'
     },
     {
       icon: MessageCircle,
       title: 'AI Astrologer',
       description: 'Chat with our AI-powered astrologer for instant answers to your life questions.',
-      link: '/public/chatbot'
+      link: '/chatbot'
     },
     {
       icon: Calendar,
@@ -43,13 +43,13 @@ const HomePage = () => {
       icon: Gem,
       title: 'Gemstone Reports',
       description: 'Discover your lucky gemstones with AI-powered recommendations and authenticity guarantee.',
-      link: '/public/shop'
+      link: '/shop'
     },
     {
       icon: Users,
       title: 'Expert Consultation',
       description: 'Book one-on-one sessions with certified astrologers for personalized guidance.',
-      link: '/public/consultation'
+      link: '/consultation'
     }
   ];
 
@@ -80,10 +80,10 @@ const HomePage = () => {
                 <span>Go to Dashboard</span>
               </Link>
               <Link
-                to="/public/chatbot"
+                to="/chatbot"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-violet-900 transition-all"
               >
-                Try AI Astrologer
+                Explore AI Astrologer
               </Link>
             </div>
 
@@ -281,13 +281,13 @@ const HomePage = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link
-              to="/public/kundli"
+              to="/kundli"
               className="bg-gradient-to-r from-amber-400 to-yellow-300 text-purple-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
               Start Your Journey
             </Link>
             <Link
-              to="/public/consultation"
+              to="/consultation"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-violet-900 transition-all"
             >
               Book Consultation
