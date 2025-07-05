@@ -582,12 +582,3 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
-
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default DashboardPage;
