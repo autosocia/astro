@@ -591,6 +591,7 @@ const LifePredictionPage = () => {
             </p>
           </div>
           {renderForm()}
+        </div>
       </div>
     );
   }
@@ -609,6 +610,7 @@ const LifePredictionPage = () => {
             </p>
           </div>
           {renderPersonSelector()}
+        </div>
       </div>
     );
   }
@@ -622,6 +624,7 @@ const LifePredictionPage = () => {
         {renderReportsSection()}
         {renderAboutSection()}
         {renderFooter()}
+      </div>
     </div>
   );
 };
