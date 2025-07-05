@@ -29,6 +29,7 @@ import MatchmakingPage from './pages/MatchmakingPage';
 import ChatbotPage from './pages/ChatbotPage';
 import ConsultationPage from './pages/ConsultationPage';
 import ShopPage from './pages/ShopPage';
+import SettingsPage from './pages/SettingsPage';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -143,6 +144,13 @@ function App() {
                 <ShopPage />
                 <Footer />
               </div>
+            } />
+
+            {/* Settings Route */}
+            <Route path="/settings" element={
+              <ProtectedRoute>
+                <SettingsPage />
+              </ProtectedRoute>
             } />
 
             {/* Redirect to dashboard if logged in, otherwise to home */}
