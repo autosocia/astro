@@ -45,11 +45,7 @@ function App() {
             {/* Auth Routes */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/onboarding" element={
-              <ProtectedRoute>
-                <OnboardingPage />
-              </ProtectedRoute>
-            } />
+            <Route path="/onboarding" element={<OnboardingPage />} />
 
             {/* Protected Dashboard Routes */}
             <Route path="/dashboard" element={
