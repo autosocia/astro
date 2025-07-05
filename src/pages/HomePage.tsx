@@ -108,18 +108,14 @@ const HomePage = () => {
       <section className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6">
                 From the Astrologer's Desk
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Witness Dr. Roohi Jain's journey as a renowned astrologer, TV personality, and spiritual guide
               </p>
-            </motion.div>
+            </div>
           </div>
 
           {/* Media Train/Carousel */}
@@ -131,18 +127,7 @@ const HomePage = () => {
             {/* Media Cards Train */}
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
               {/* TV Appearance Card */}
-              <motion.div
-                initial={{ opacity: 0, x: -100, rotateY: -15 }}
-                animate={{ opacity: 1, x: 0, rotateY: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  rotateY: 5,
-                  boxShadow: "0 25px 50px rgba(139, 92, 246, 0.3)",
-                  transition: { duration: 0.3 }
-                }}
-                className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-violet-200 transform perspective-1000"
-              >
+              <div className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-violet-200 transform perspective-1000 hover:scale-105 transition-all duration-300">
                 <div className="relative overflow-hidden">
                   <img
                     src="/WhatsApp Image 2025-07-04 at 19.05.57.jpeg"
@@ -166,21 +151,10 @@ const HomePage = () => {
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Professional Portrait Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                whileHover={{ 
-                  scale: 1.05,
-                  rotateX: 5,
-                  boxShadow: "0 25px 50px rgba(245, 158, 11, 0.3)",
-                  transition: { duration: 0.3 }
-                }}
-                className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 transform perspective-1000"
-              >
+              <div className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 transform perspective-1000 hover:scale-105 transition-all duration-300">
                 <div className="relative overflow-hidden">
                   <img
                     src="/WhatsApp Image 2025-07-04 at 19.06.00 (1).jpeg"
@@ -204,21 +178,10 @@ const HomePage = () => {
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Awards & Recognition Card */}
-              <motion.div
-                initial={{ opacity: 0, x: 100, rotateY: 15 }}
-                animate={{ opacity: 1, x: 0, rotateY: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                whileHover={{ 
-                  scale: 1.05,
-                  rotateY: -5,
-                  boxShadow: "0 25px 50px rgba(236, 72, 153, 0.3)",
-                  transition: { duration: 0.3 }
-                }}
-                className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-200 transform perspective-1000 md:col-span-2 lg:col-span-1"
-              >
+              <div className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-200 transform perspective-1000 md:col-span-2 lg:col-span-1 hover:scale-105 transition-all duration-300">
                 <div className="relative overflow-hidden">
                   <img
                     src="/WhatsApp Image 2025-07-04 at 19.06.01 (2).jpeg"
@@ -243,7 +206,7 @@ const HomePage = () => {
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Floating Elements */}
@@ -253,12 +216,7 @@ const HomePage = () => {
           </div>
 
           {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-center mt-16"
-          >
+          <div className="text-center mt-16">
             <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
               Whether you seek answers about love, career, or personal growth, Dr. Roohi Jain's precise predictions and compassionate guidance illuminate your path like the stars above.
             </p>
@@ -269,7 +227,7 @@ const HomePage = () => {
               <MessageCircle className="h-5 w-5" />
               <span>Book Your Reading</span>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 
