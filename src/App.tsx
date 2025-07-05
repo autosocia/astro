@@ -54,7 +54,9 @@ function App() {
             {/* Protected Dashboard Routes */}
             <Route path="/dashboard" element={
               <ProtectedRoute>
-                <DashboardPage />
+                <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+                  <DashboardPage />
+                </div>
               </ProtectedRoute>
             } />
 
