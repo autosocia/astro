@@ -518,66 +518,67 @@ const DashboardPage = () => {
   );
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="w-full max-w-none"
-    >
-      {renderHeader()}
+    <div className="w-full max-w-none">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        {renderHeader()}
 
-      {/* Welcome Section */}
-      <div className="mb-8">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-          Your Cosmic Dashboard
-        </h2>
-        <p className="text-white/70 text-lg lg:text-xl leading-relaxed max-w-4xl">
-          Explore comprehensive astrology services and discover your destiny with our expert guidance
-        </p>
-      </div>
-
-      {/* Main Feature Cards Grid */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-display font-semibold text-white mb-6">Astrology Services</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {mainFeatures.map((feature, index) => (
-            <div key={feature.link} className="w-full">
-              <FeatureCard
-                {...feature}
-                delay={index * 0.05}
-              />
-            </div>
-          ))}
+        {/* Welcome Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
+            Your Cosmic Dashboard
+          </h2>
+          <p className="text-white/70 text-base sm:text-lg lg:text-xl leading-relaxed max-w-4xl">
+            Explore comprehensive astrology services and discover your destiny with our expert guidance
+          </p>
         </div>
-      </div>
 
-      {/* Calculations Section */}
-      {renderExpandableSection(
-        "Calculations: If you know Astrology",
-        calculationLinks,
-        "calculations",
-        <Calculator className="h-6 w-6 text-blue-400" />
-      )}
+        {/* Main Feature Cards Grid */}
+        <div className="mb-12">
+          <h3 className="text-xl sm:text-2xl font-display font-semibold text-white mb-6">Astrology Services</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
+            {mainFeatures.map((feature, index) => (
+              <div key={feature.link} className="w-full">
+                <FeatureCard
+                  {...feature}
+                  delay={index * 0.05}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
-      {/* Paid Consultation Section */}
-      {renderExpandableSection(
-        "Paid Consultation",
-        paidConsultationLinks,
-        "consultation",
-        <Phone className="h-6 w-6 text-green-400" />
-      )}
+        {/* Calculations Section */}
+        {renderExpandableSection(
+          "Calculations: If you know Astrology",
+          calculationLinks,
+          "calculations",
+          <Calculator className="h-6 w-6 text-blue-400" />
+        )}
 
-      {/* Ask Question Section */}
-      {renderAskQuestionSection()}
+        {/* Paid Consultation Section */}
+        {renderExpandableSection(
+          "Paid Consultation",
+          paidConsultationLinks,
+          "consultation",
+          <Phone className="h-6 w-6 text-green-400" />
+        )}
 
-      {/* Paid Services Section */}
-      {renderPaidServicesSection()}
+        {/* Ask Question Section */}
+        {renderAskQuestionSection()}
 
-      {/* About Section */}
-      {renderAboutSection()}
+        {/* Paid Services Section */}
+        {renderPaidServicesSection()}
 
-      {/* Footer */}
-      {renderFooter()}
-    </motion.div>
+        {/* About Section */}
+        {renderAboutSection()}
+
+        {/* Footer */}
+        {renderFooter()}
+      </motion.div>
+    </div>
   );
 };
 
