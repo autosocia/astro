@@ -38,6 +38,11 @@ const OnboardingPage = () => {
       setCurrentStep(currentStep + 1);
     } else {
       // Complete onboarding
+      try {
+        localStorage.setItem('userBirthData', JSON.stringify(formData));
+      } catch (error) {
+        console.error('Error saving user data:', error);
+      }
       navigate('/dashboard');
     }
   };

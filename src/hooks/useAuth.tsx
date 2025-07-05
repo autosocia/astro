@@ -18,6 +18,7 @@ interface AuthContextType {
   signup: (email: string, password: string, name: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
+  hasUserData: () => boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -59,6 +60,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const logout = async () => {
     await signOut(auth);
+    localStorage.removeItem('userBirthData');
+  };
+
+  const hasUserData = () => {
+    try {
+      const userData = localStorage.getItem('userBirthData');
+      if (!userData) return false;
+      
+      const parsedData = JSON.parse(userData);
+      return !!(parsedData.birthTime && parsedData.birthCity);
+    } catch (error) {
+      console.error('Error checking user data:', error);
+      return false;
+    }
   };
 
   const value = {
@@ -67,7 +82,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     login,
     signup,
     loginWithGoogle,
-    logout
+    logout,
+    hasUserData
   };
 
   return (

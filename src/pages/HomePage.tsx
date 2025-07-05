@@ -73,10 +73,11 @@ const HomePage = () => {
             
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
               <Link
-                to="/kundli"
-                className="bg-gradient-to-r from-amber-400 to-yellow-300 text-purple-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105"
+                to="/dashboard"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105 flex items-center space-x-2"
               >
-                Book Consultation
+                <Star className="h-5 w-5" />
+                <span>Go to Dashboard</span>
               </Link>
               <Link
                 to="/chatbot"
