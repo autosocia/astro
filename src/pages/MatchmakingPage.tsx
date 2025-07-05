@@ -1,32 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Heart, 
-  Users, 
-  Star, 
-  Calendar, 
-  MapPin, 
-  Clock,
-  ChevronDown,
-  ChevronUp,
-  Download,
-  Share2,
-  Phone,
-  MessageCircle,
-  Search,
-  Save,
-  Print,
-  Settings,
-  Sparkles,
-  BookOpen,
-  Gem,
-  Shield,
-  TrendingUp,
-  FileText,
-  Gift,
-  Home,
-  AlertTriangle
-} from 'lucide-react';
+import { Heart, Users, Star, Calendar, MapPin, Clock, ChevronDown, ChevronUp, Download, Share2, Phone, MessageCircle, Search, Save, Printer as Print, Settings, Sparkles, BookOpen, Gem, Shield, TrendingUp, FileText, Gift, Home, AlertTriangle } from 'lucide-react';
 import { PersonDetails, BirthDetails, GunaScore, MatchingResult } from '../types/matchmaking';
 import { getLocationData, formatCoordinate } from '../utils/locationService';
 import { calculateGunaScores, calculateMatchingResult } from '../utils/gunaCalculations';
