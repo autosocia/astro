@@ -29,7 +29,23 @@ import {
   PieChart,
   Telescope,
   Wand2,
-  Briefcase
+  Briefcase,
+  Search,
+  Save,
+  Printer as Print,
+  Settings,
+  Calculator,
+  BarChart3,
+  Layers,
+  Grid3X3,
+  Orbit,
+  Phone,
+  Download,
+  Share2,
+  Home,
+  AlertTriangle,
+  ChevronDown,
+  ChevronRight
 } from 'lucide-react';
 import DashboardNavbar from '../components/DashboardNavbar';
 import Sidebar from '../components/Sidebar';
@@ -37,8 +53,9 @@ import FeatureCard from '../components/FeatureCard';
 
 const DashboardPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
-  const features = [
+  const mainFeatures = [
     {
       title: 'Birth Chart / Kundli',
       subtitle: 'Planetary position and your chart',
@@ -233,6 +250,276 @@ const DashboardPage = () => {
     }
   ];
 
+  const calculationLinks = [
+    'Basic Details',
+    'Planetary Position',
+    'Lagna & Chandra Charts',
+    'Chalit Table & Chart',
+    'Prastharashtakvarga Table',
+    'Ashtak Varga Table',
+    'Aspect On Bhav Madhya',
+    'Aspect On KP Cusp',
+    'Planetary Aspect (Western)',
+    'Shodashvarga Charts',
+    'Shodashvarga Table',
+    'Friendship Table',
+    'Vimshottari Dasha',
+    'ShadBala & BhavBala',
+    'Char Dasha',
+    'Yogini Dasha',
+    'Western System',
+    'Sarvatobhadra Chakra',
+    'Transit Today',
+    'Print Format 1 - PDF',
+    'Print Format 2 - Low',
+    'Print Shodashvarga - PDF',
+    'Print Detailed Calculations Reports - PDF',
+    'Print Detailed Kundali & Reports - PDF'
+  ];
+
+  const paidConsultationLinks = [
+    'Print Detailed Calculations Reports - PDF',
+    'Vimshottari Dasha',
+    'Char Dasha',
+    'Yogini Dasha',
+    'Lal Kitab Dasha',
+    'Print Vimshottari Dasha - Low',
+    'Lal Kitab Chart',
+    'Lal Kitab Chart & Planets Houses',
+    'Lal Kitab Dasha',
+    'Lal Kitab Worksheet',
+    'Lal Kitab Varshaphal',
+    'Lal Kitab Predictions',
+    'Lal Kitab Month Charts',
+    'Lal Kitab Varshaphal Charts',
+    'Lal Kitab Varshphal Predictions (Beta)',
+    'Lal Kitab Print Page PDF',
+    'KP System Planets & Cusps',
+    'Planetary Aspect (Western)',
+    'Aspect On KPCusp',
+    'KP System Significators & Rps',
+    'Save Chart as image',
+    'Print KP Page PDF',
+    'Print KP Report (PDF)',
+    'Print Format 2 - Low',
+    'Print Shodashvarga - PDF'
+  ];
+
+  const paidServices = [
+    { name: 'Astro Brihat Kundli', price: '₹299' },
+    { name: 'Raj Yoga Report', price: '₹199' },
+    { name: 'Personalized Horoscope 2025', price: '₹499' },
+    { name: 'Marriage Report', price: '₹399' },
+    { name: 'Career / Job Report', price: '₹299' },
+    { name: 'Shani Report', price: '₹199' },
+    { name: 'Year Book 2025', price: '₹599' },
+    { name: 'Ask a Question Service', price: '₹99' }
+  ];
+
+  const aboutServices = [
+    'Buy Gemstones',
+    'Buy Rudraksha',
+    'Buy Yantra',
+    'Buy Fengshui',
+    'Order Brihat Kundli',
+    'Order Year Book',
+    'Order Ask a Question Service',
+    'Order Shani Report',
+    'Order Marriage Report',
+    'Order Career / Job Report',
+    'Horoscope 2025',
+    'Rashifal 2025',
+    'Calendar 2025'
+  ];
+
+  const renderHeader = () => (
+    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 mb-8">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center space-x-3">
+          <Star className="h-8 w-8 text-yellow-400" />
+          <div>
+            <h1 className="text-2xl font-display font-bold text-white">Welcome to Astro.com</h1>
+            <p className="text-white/70 text-sm">Your Complete Astrology Dashboard</p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-3">
+          <button className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors">
+            <Print className="h-4 w-4" />
+            <span className="hidden sm:inline">Print</span>
+          </button>
+          <button className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors">
+            <Save className="h-4 w-4" />
+            <span className="hidden sm:inline">Save</span>
+          </button>
+          <button className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors">
+            <Search className="h-4 w-4" />
+            <span className="hidden sm:inline">Search</span>
+          </button>
+          <button className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:shadow-xl transition-all">
+            <MessageCircle className="h-4 w-4" />
+            <span>Talk to Astrologer</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderExpandableSection = (title: string, items: string[], sectionKey: string, icon: React.ReactNode) => (
+    <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 mb-6">
+      <button
+        onClick={() => setExpandedSection(expandedSection === sectionKey ? null : sectionKey)}
+        className="w-full flex items-center justify-between p-6 text-left"
+      >
+        <div className="flex items-center space-x-3">
+          {icon}
+          <h3 className="text-xl font-display font-semibold text-white">{title}</h3>
+        </div>
+        {expandedSection === sectionKey ? 
+          <ChevronDown className="h-5 w-5 text-white" /> : 
+          <ChevronRight className="h-5 w-5 text-white" />
+        }
+      </button>
+      
+      {expandedSection === sectionKey && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          className="px-6 pb-6"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {items.map((item, index) => (
+              <button
+                key={index}
+                className="text-left p-3 bg-white/5 rounded-lg border border-white/20 hover:border-purple-400/50 hover:bg-white/10 transition-all group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-white/80 group-hover:text-white transition-colors text-sm">
+                    check {item}
+                  </span>
+                  <Calculator className="h-4 w-4 text-purple-400 group-hover:text-purple-300" />
+                </div>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </div>
+  );
+
+  const renderAskQuestionSection = () => (
+    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-8">
+      <h3 className="text-2xl font-display font-semibold text-white mb-6 text-center">Ask Your Question</h3>
+      
+      <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-6 text-center">
+        <HelpCircle className="h-12 w-12 text-white mx-auto mb-4" />
+        <h4 className="text-xl font-bold text-white mb-2">Get answer of your urgent question</h4>
+        <p className="text-orange-200 mb-6">
+          Do you have a question and need answer quickly? Get urgent answer to your question
+        </p>
+        <div className="flex justify-center space-x-4">
+          <button className="flex items-center space-x-2 bg-white text-orange-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold">
+            <MessageCircle className="h-5 w-5" />
+            <span>Ask Now</span>
+          </button>
+          <button className="flex items-center space-x-2 bg-orange-700 text-white px-6 py-3 rounded-lg hover:bg-orange-800 transition-colors">
+            <Phone className="h-5 w-5" />
+            <span>Call Expert</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderPaidServicesSection = () => (
+    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-8">
+      <h3 className="text-2xl font-display font-semibold text-white mb-6">Paid Services</h3>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {paidServices.map((service, index) => (
+          <div key={index} className="flex items-center justify-between p-4 bg-amber-500/10 rounded-lg border border-amber-500/20 hover:border-amber-400/50 transition-colors">
+            <span className="text-white/80">{service.name}</span>
+            <div className="flex items-center space-x-3">
+              <span className="text-amber-400 font-semibold">{service.price}</span>
+              <button className="bg-amber-500 text-white px-3 py-1 rounded text-sm hover:bg-amber-600 transition-colors">
+                Order
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const renderAboutSection = () => (
+    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-8">
+      <h3 className="text-2xl font-display font-semibold text-white mb-6">About Astro</h3>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <p className="text-white/80 leading-relaxed mb-6">
+            Astro is India's leading astrology platform, providing accurate Vedic astrology services 
+            and predictions. With Dr. Roohi Jain's expertise, we offer comprehensive astrological solutions 
+            for all your life questions including birth chart analysis, matchmaking, and spiritual guidance.
+          </p>
+          
+          <h4 className="text-lg font-semibold text-white mb-4">Services & Products</h4>
+          <div className="grid grid-cols-2 gap-3">
+            {aboutServices.map((service, index) => (
+              <button
+                key={index}
+                className="text-left p-3 bg-white/5 rounded-lg border border-white/20 hover:border-purple-400/50 hover:bg-white/10 transition-all text-sm text-white/80 hover:text-white"
+              >
+                {service}
+              </button>
+            ))}
+          </div>
+        </div>
+        
+        <div className="flex items-center justify-center">
+          <div className="text-center">
+            <Sparkles className="h-16 w-16 text-yellow-400 mx-auto mb-4 animate-pulse-slow" />
+            <p className="text-white/60 text-sm mb-2">Trusted by millions worldwide</p>
+            <p className="text-white/60 text-sm">Expert astrologers available 24/7</p>
+            <div className="mt-4 flex justify-center space-x-3">
+              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm hover:shadow-lg transition-all">
+                Download App
+              </button>
+              <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderFooter = () => (
+    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+      <div className="text-center mb-6">
+        <p className="text-white/60 text-sm mb-2">
+          All copyrights reserved © 2025 Astro - Dr. Roohi Jain
+        </p>
+        <div className="flex items-center justify-center space-x-4 text-white/60 text-sm">
+          <button className="hover:text-white transition-colors flex items-center space-x-1">
+            <Home className="h-3 w-3" />
+            <span>Home</span>
+          </button>
+          <span>|</span>
+          <button className="hover:text-white transition-colors">Feedback</button>
+          <span>|</span>
+          <button className="hover:text-white transition-colors">Disclaimer</button>
+        </div>
+      </div>
+      
+      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 text-center">
+        <p className="text-green-300 text-sm">
+          <strong>Notes:</strong> Your chart has been saved successfully. You can access it anytime from your dashboard.
+        </p>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
       <DashboardNavbar onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
@@ -254,20 +541,23 @@ const DashboardPage = () => {
               animate={{ opacity: 1, y: 0 }}
               className="w-full max-w-none"
             >
+              {renderHeader()}
+
               {/* Welcome Section */}
-              <div className="mb-6 sm:mb-8 lg:mb-10">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-3 lg:mb-4 leading-tight">
-                  Welcome to Your Cosmic Dashboard
-                </h1>
-                <p className="text-white/70 text-base sm:text-lg lg:text-xl leading-relaxed max-w-4xl">
-                  Explore your destiny with our comprehensive astrology tools
+              <div className="mb-8">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                  Your Cosmic Dashboard
+                </h2>
+                <p className="text-white/70 text-lg lg:text-xl leading-relaxed max-w-4xl">
+                  Explore comprehensive astrology services and discover your destiny with our expert guidance
                 </p>
               </div>
 
-              {/* Feature Cards Grid */}
-              <div className="w-full">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 gap-4 sm:gap-5 lg:gap-6">
-                  {features.map((feature, index) => (
+              {/* Main Feature Cards Grid */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-display font-semibold text-white mb-6">Astrology Services</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {mainFeatures.map((feature, index) => (
                     <div key={feature.link} className="w-full">
                       <FeatureCard
                         {...feature}
@@ -277,6 +567,34 @@ const DashboardPage = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Calculations Section */}
+              {renderExpandableSection(
+                "Calculations: If you know Astrology",
+                calculationLinks,
+                "calculations",
+                <Calculator className="h-6 w-6 text-blue-400" />
+              )}
+
+              {/* Paid Consultation Section */}
+              {renderExpandableSection(
+                "Paid Consultation",
+                paidConsultationLinks,
+                "consultation",
+                <Phone className="h-6 w-6 text-green-400" />
+              )}
+
+              {/* Ask Question Section */}
+              {renderAskQuestionSection()}
+
+              {/* Paid Services Section */}
+              {renderPaidServicesSection()}
+
+              {/* About Section */}
+              {renderAboutSection()}
+
+              {/* Footer */}
+              {renderFooter()}
             </motion.div>
           </div>
         </div>
