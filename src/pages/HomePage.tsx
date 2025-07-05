@@ -19,19 +19,19 @@ const HomePage = () => {
       icon: Star,
       title: 'Birth Chart Analysis',
       description: 'Generate detailed Kundli with Vedic calculations, planetary positions, and personalized insights.',
-      link: '/kundli'
+      link: '/public/kundli'
     },
     {
       icon: Heart,
       title: 'Matchmaking',
       description: 'Find your perfect match with Guna Milan compatibility analysis and relationship insights.',
-      link: '/matchmaking'
+      link: '/public/matchmaking'
     },
     {
       icon: MessageCircle,
       title: 'AI Astrologer',
       description: 'Chat with our AI-powered astrologer for instant answers to your life questions.',
-      link: '/chatbot'
+      link: '/public/chatbot'
     },
     {
       icon: Calendar,
@@ -43,13 +43,13 @@ const HomePage = () => {
       icon: Gem,
       title: 'Gemstone Reports',
       description: 'Discover your lucky gemstones with AI-powered recommendations and authenticity guarantee.',
-      link: '/shop'
+      link: '/public/shop'
     },
     {
       icon: Users,
       title: 'Expert Consultation',
       description: 'Book one-on-one sessions with certified astrologers for personalized guidance.',
-      link: '/consultation'
+      link: '/public/consultation'
     }
   ];
 
@@ -74,13 +74,13 @@ const HomePage = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
               <Link
                 to="/dashboard"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105 flex items-center space-x-2"
+                to="/public/kundli"
               >
                 <Star className="h-5 w-5" />
                 <span>Go to Dashboard</span>
               </Link>
               <Link
-                to="/chatbot"
+                to="/public/consultation"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-violet-900 transition-all"
               >
                 Explore Insights

@@ -44,12 +44,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
 
   const menuItems = [
-    { icon: Star, label: 'Birth Chart', path: '/birth-chart' },
-    { icon: Heart, label: 'Match', path: '/match-horoscope' },
-    { icon: MessageCircle, label: 'Talk', path: '/talk' },
+    { icon: Star, label: 'Birth Chart', path: '/kundli' },
+    { icon: Heart, label: 'Match', path: '/matchmaking' },
+    { icon: MessageCircle, label: 'Talk', path: '/chatbot' },
     { icon: Target, label: 'Life Predictions', path: '/life-predictions' },
     { icon: TrendingUp, label: 'Transit', path: '/transit' },
-    { icon: Gem, label: 'Gemstones', path: '/gemstones' },
+    { icon: Gem, label: 'Gemstones', path: '/shop' },
     { icon: Calendar, label: 'Daily', path: '/daily' },
     { icon: Shield, label: 'Mangal Dosha', path: '/mangal-dosha' },
     { icon: Sun, label: 'Numerology', path: '/numerology' },

@@ -604,8 +604,8 @@ const KundliPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full max-w-none">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -652,7 +652,6 @@ const KundliPage = () => {
             All copyrights reserved © 2025 Astro - Dr. Roohi Jain
           </p>
         </div>
-      </div>
     </div>
   );
 };

@@ -58,27 +58,6 @@ function App() {
             } />
 
             {/* Protected Feature Routes */}
-            <Route path="/birth-chart" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <BirthChartPage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
-            <Route path="/match-horoscope" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <MatchHoroscopePage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
-            <Route path="/talk" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <TalkPage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
             <Route path="/daily" element={
               <ProtectedRoute>
                 <DashboardLayout>
@@ -114,7 +93,6 @@ function App() {
 
             {/* Stub routes for other features */}
             <Route path="/transit" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Transit Report</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
-            <Route path="/gemstones" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Gemstones Report</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
             <Route path="/lal-kitab" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Lal Kitab</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
             <Route path="/mangal-dosha" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Mangal Dosha</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
             <Route path="/numerology" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Numerology</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
@@ -129,41 +107,77 @@ function App() {
               </div>
             } />
 
-            {/* Legacy Routes (keeping for compatibility) */}
-            <Route path="/kundli" element={
+            {/* Public Legacy Routes for non-authenticated users */}
+            <Route path="/public/kundli" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <KundliPage />
                 <Footer />
               </div>
             } />
-            <Route path="/matchmaking" element={
+            <Route path="/public/matchmaking" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <MatchmakingPage />
                 <Footer />
               </div>
             } />
-            <Route path="/chatbot" element={
+            <Route path="/public/chatbot" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <ChatbotPage />
                 <Footer />
               </div>
             } />
-            <Route path="/consultation" element={
+            <Route path="/public/consultation" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <ConsultationPage />
                 <Footer />
               </div>
             } />
-            <Route path="/shop" element={
+            <Route path="/public/shop" element={
               <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                 <Navbar />
                 <ShopPage />
                 <Footer />
               </div>
+            } />
+            {/* Legacy Routes (keeping for compatibility) */}
+            <Route path="/kundli" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <KundliPage />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/matchmaking" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <MatchmakingPage />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/chatbot" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <ChatbotPage />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/consultation" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <ConsultationPage />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/shop" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <ShopPage />
+                </DashboardLayout>
+              </ProtectedRoute>
             } />
 
             {/* Settings Route */}

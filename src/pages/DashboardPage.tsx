@@ -58,7 +58,7 @@ const DashboardPage = () => {
       subtitle: 'Planetary position and your chart',
       icon: Star,
       ctaLabel: 'Generate Chart',
-      link: '/birth-chart',
+      link: '/kundli',
       gradient: 'from-purple-500 to-blue-500'
     },
     {
@@ -66,7 +66,7 @@ const DashboardPage = () => {
       subtitle: 'Guna Milan with your partner',
       icon: Heart,
       ctaLabel: 'Check Compatibility',
-      link: '/match-horoscope',
+      link: '/matchmaking',
       gradient: 'from-pink-500 to-red-500'
     },
     {
@@ -74,7 +74,7 @@ const DashboardPage = () => {
       subtitle: 'First chat free with certified astrologers',
       icon: MessageCircle,
       ctaLabel: 'Start Chat',
-      link: '/talk',
+      link: '/chatbot',
       gradient: 'from-green-500 to-teal-500'
     },
     {
@@ -98,7 +98,7 @@ const DashboardPage = () => {
       subtitle: 'Go to dashboard',
       icon: Compass,
       ctaLabel: 'Open Dashboard',
-      link: '/dhruv-dashboard',
+      link: '/dashboard',
       gradient: 'from-cyan-500 to-blue-500'
     },
     {
@@ -122,7 +122,7 @@ const DashboardPage = () => {
       subtitle: 'Personal report by experts',
       icon: HelpCircle,
       ctaLabel: 'Ask Now',
-      link: '/ask-question',
+      link: '/consultation',
       gradient: 'from-purple-600 to-pink-500'
     },
     {
@@ -130,7 +130,7 @@ const DashboardPage = () => {
       subtitle: 'Ascendant, Nakshatra, Moon-sign traits',
       icon: Sun,
       ctaLabel: 'View Details',
-      link: '/ascendant',
+      link: '/birth-chart',
       gradient: 'from-yellow-500 to-orange-500'
     },
     {
@@ -138,7 +138,7 @@ const DashboardPage = () => {
       subtitle: 'Which gem suits you & how to wear',
       icon: Gem,
       ctaLabel: 'Get Report',
-      link: '/gemstones',
+      link: '/shop',
       gradient: 'from-emerald-500 to-green-500'
     },
     {
@@ -146,7 +146,7 @@ const DashboardPage = () => {
       subtitle: '250-page coloured report',
       icon: FileText,
       ctaLabel: 'Generate Report',
-      link: '/brihat-kundli',
+      link: '/kundli',
       gradient: 'from-blue-600 to-indigo-500'
     },
     {
@@ -154,7 +154,7 @@ const DashboardPage = () => {
       subtitle: 'Your annual forecast',
       icon: Calendar,
       ctaLabel: 'View 2025',
-      link: '/horoscope-2025',
+      link: '/daily',
       gradient: 'from-violet-500 to-purple-500'
     },
     {
@@ -170,7 +170,7 @@ const DashboardPage = () => {
       subtitle: 'How will 2025 be?',
       icon: PieChart,
       ctaLabel: 'Get Analysis',
-      link: '/varshphal',
+      link: '/life-predictions',
       gradient: 'from-teal-500 to-cyan-500'
     },
     {
@@ -178,7 +178,7 @@ const DashboardPage = () => {
       subtitle: 'Full-life Saturn insight',
       icon: Moon,
       ctaLabel: 'View Report',
-      link: '/sade-sati',
+      link: '/life-predictions',
       gradient: 'from-gray-600 to-gray-500'
     },
     {
@@ -186,7 +186,7 @@ const DashboardPage = () => {
       subtitle: 'Lifelong impact',
       icon: Zap,
       ctaLabel: 'Check Dosh',
-      link: '/kalsarp',
+      link: '/mangal-dosha',
       gradient: 'from-red-700 to-red-500'
     },
     {
@@ -194,7 +194,7 @@ const DashboardPage = () => {
       subtitle: 'Rise & fall timelines',
       icon: TrendingUp,
       ctaLabel: 'View Dasha',
-      link: '/dasha-phal',
+      link: '/kundli',
       gradient: 'from-indigo-600 to-blue-500'
     },
     {
@@ -202,7 +202,7 @@ const DashboardPage = () => {
       subtitle: 'Love life forecast',
       icon: Heart,
       ctaLabel: 'Love Reading',
-      link: '/love',
+      link: '/matchmaking',
       gradient: 'from-pink-600 to-rose-500'
     },
     {
@@ -210,7 +210,7 @@ const DashboardPage = () => {
       subtitle: 'Career growth outlook',
       icon: Briefcase,
       ctaLabel: 'Career Guide',
-      link: '/career',
+      link: '/life-predictions',
       gradient: 'from-blue-700 to-blue-500'
     },
     {
@@ -226,7 +226,7 @@ const DashboardPage = () => {
       subtitle: 'Personality analysis',
       icon: User,
       ctaLabel: 'Know Yourself',
-      link: '/nature',
+      link: '/life-predictions',
       gradient: 'from-green-600 to-emerald-500'
     },
     {
@@ -242,7 +242,7 @@ const DashboardPage = () => {
       subtitle: 'Immunity & wellness',
       icon: Activity,
       ctaLabel: 'Health Report',
-      link: '/health',
+      link: '/life-predictions',
       gradient: 'from-green-700 to-teal-500'
     }
   ];
@@ -387,6 +387,7 @@ const DashboardPage = () => {
             {items.map((item, index) => (
               <button
                 key={index}
+                onClick={() => window.open('/kundli', '_blank')}
                 className="text-left p-3 bg-white/5 rounded-lg border border-white/20 hover:border-purple-400/50 hover:bg-white/10 transition-all group"
               >
                 <div className="flex items-center justify-between">
@@ -437,7 +438,10 @@ const DashboardPage = () => {
             <span className="text-white/80">{service.name}</span>
             <div className="flex items-center space-x-3">
               <span className="text-amber-400 font-semibold">{service.price}</span>
-              <button className="bg-amber-500 text-white px-3 py-1 rounded text-sm hover:bg-amber-600 transition-colors">
+              <button 
+                onClick={() => window.open('/consultation', '_blank')}
+                className="bg-amber-500 text-white px-3 py-1 rounded text-sm hover:bg-amber-600 transition-colors"
+              >
                 Order
               </button>
             </div>
@@ -464,6 +468,17 @@ const DashboardPage = () => {
             {aboutServices.map((service, index) => (
               <button
                 key={index}
+                onClick={() => {
+                  if (service.includes('Gemstones') || service.includes('Rudraksha') || service.includes('Yantra') || service.includes('Fengshui')) {
+                    window.open('/shop', '_blank');
+                  } else if (service.includes('Kundli')) {
+                    window.open('/kundli', '_blank');
+                  } else if (service.includes('Question')) {
+                    window.open('/consultation', '_blank');
+                  } else {
+                    window.open('/life-predictions', '_blank');
+                  }
+                }}
                 className="text-left p-3 bg-white/5 rounded-lg border border-white/20 hover:border-purple-400/50 hover:bg-white/10 transition-all text-sm text-white/80 hover:text-white"
               >
                 {service}
@@ -478,10 +493,16 @@ const DashboardPage = () => {
             <p className="text-white/60 text-sm mb-2">Trusted by millions worldwide</p>
             <p className="text-white/60 text-sm">Expert astrologers available 24/7</p>
             <div className="mt-4 flex justify-center space-x-3">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm hover:shadow-lg transition-all">
+              <button 
+                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.astro.app', '_blank')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm hover:shadow-lg transition-all"
+              >
                 Download App
               </button>
-              <button className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all">
+              <button 
+                onClick={() => window.open('/', '_blank')}
+                className="border border-white/30 text-white px-4 py-2 rounded-lg text-sm hover:bg-white/10 transition-all"
+              >
                 Learn More
               </button>
             </div>
@@ -498,14 +519,27 @@ const DashboardPage = () => {
           All copyrights reserved © 2025 Astro - Dr. Roohi Jain
         </p>
         <div className="flex items-center justify-center space-x-4 text-white/60 text-sm">
-          <button className="hover:text-white transition-colors flex items-center space-x-1">
+          <button 
+            onClick={() => window.open('/', '_blank')}
+            className="hover:text-white transition-colors flex items-center space-x-1"
+          >
             <Home className="h-3 w-3" />
             <span>Home</span>
           </button>
           <span>|</span>
-          <button className="hover:text-white transition-colors">Feedback</button>
+          <button 
+            onClick={() => window.open('/consultation', '_blank')}
+            className="hover:text-white transition-colors"
+          >
+            Feedback
+          </button>
           <span>|</span>
-          <button className="hover:text-white transition-colors">Disclaimer</button>
+          <button 
+            onClick={() => alert('Disclaimer: Astrology is for entertainment purposes. Results may vary.')}
+            className="hover:text-white transition-colors"
+          >
+            Disclaimer
+          </button>
         </div>
       </div>
       

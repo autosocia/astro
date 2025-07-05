@@ -10,11 +10,11 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Kundli', path: '/kundli' },
-    { name: 'Matchmaking', path: '/matchmaking' },
-    { name: 'AI Astrologer', path: '/chatbot' },
-    { name: 'Consultation', path: '/consultation' },
-    { name: 'Shop', path: '/shop' },
+    { name: 'Kundli', path: '/public/kundli' },
+    { name: 'Matchmaking', path: '/public/matchmaking' },
+    { name: 'AI Astrologer', path: '/public/chatbot' },
+    { name: 'Consultation', path: '/public/consultation' },
+    { name: 'Shop', path: '/public/shop' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
