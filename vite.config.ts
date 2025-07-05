@@ -143,10 +143,6 @@ function App() {
                 <Footer />
               </div>
             } />
-                  <ShopPage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
 
             {/* Settings Route */}
             <Route path="/settings" element={
