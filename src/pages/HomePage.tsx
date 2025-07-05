@@ -74,16 +74,16 @@ const HomePage = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
               <Link
                 to="/dashboard"
-                className="bg-gradient-to-r from-amber-400 to-yellow-300 text-purple-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105 inline-flex items-center space-x-2"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105 inline-flex items-center space-x-2"
               >
                 <Star className="h-5 w-5" />
                 <span>Go to Dashboard</span>
               </Link>
               <Link
-                to="/public/consultation"
+                to="/public/chatbot"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-violet-900 transition-all"
               >
-                Explore Insights
+                Try AI Astrologer
               </Link>
             </div>
 
@@ -281,13 +281,13 @@ const HomePage = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link
-              to="/kundli"
+              to="/public/kundli"
               className="bg-gradient-to-r from-amber-400 to-yellow-300 text-purple-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
               Start Your Journey
             </Link>
             <Link
-              to="/consultation"
+              to="/public/consultation"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-violet-900 transition-all"
             >
               Book Consultation
