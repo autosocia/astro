@@ -12,6 +12,10 @@
   background: linear-gradient(135deg, #8B5CF6 0%, #F59E0B 100%);
 }
 
+.bg-gradient-cosmic {
+  background: linear-gradient(135deg, #8B5CF6 0%, #F59E0B 100%);
+}
+
 .gradient-cosmic-light {
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
 }
