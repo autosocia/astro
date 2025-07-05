@@ -20,6 +20,7 @@ import TalkPage from './pages/features/TalkPage';
 import DailyPage from './pages/features/DailyPage';
 
 // New Feature Pages
+import LifePredictionPage from './pages/LifePredictionPage';
 import KundliMatchingPage from './pages/features/KundliMatchingPage';
 import AIAstrologerPage from './pages/features/AIAstrologerPage';
 
@@ -79,6 +80,15 @@ function App() {
               </ProtectedRoute>
             } />
 
+            {/* Life Predictions Route */}
+            <Route path="/life-predictions" element={
+              <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
+                <Navbar />
+                <LifePredictionPage />
+                <Footer />
+              </div>
+            } />
+
             {/* New Protected Feature Routes */}
             <Route path="/kundli-matching" element={
               <ProtectedRoute>
@@ -92,7 +102,6 @@ function App() {
             } />
 
             {/* Stub routes for other features */}
-            <Route path="/life-predictions" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Life Predictions</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
             <Route path="/transit" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Transit Report</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
             <Route path="/gemstones" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Gemstones Report</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
             <Route path="/lal-kitab" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Lal Kitab</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
