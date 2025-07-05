@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Star, Sparkles, User, ShoppingCart } from 'lucide-react';
+import { Menu, X, Star, Sparkles, User, ShoppingCart, LogOut } from 'lucide-react';
+import { useAuth } from '../hooks/useAuth';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, logout } = useAuth();
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -16,6 +18,14 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
 
   return (
     <nav className="bg-white/80 backdrop-blur-md border-b border-violet-100 sticky top-0 z-50">
@@ -56,13 +66,43 @@ const Navbar = () => {
                 0
               </span>
             </button>
-            <Link
-              to="/dashboard"
-              className="flex items-center space-x-2 bg-gradient-cosmic text-white px-4 py-2 rounded-full hover:shadow-lg transition-all"
-            >
-              <User className="h-4 w-4" />
-              <span className="font-primary text-sm">Dashboard</span>
-            </Link>
+            
+            {user ? (
+              // Authenticated user - show Dashboard and Logout
+              <div className="flex items-center space-x-3">
+                <Link
+                  to="/dashboard"
+                  className="flex items-center space-x-2 bg-gradient-cosmic text-white px-4 py-2 rounded-full hover:shadow-lg transition-all"
+                >
+                  <User className="h-4 w-4" />
+                  <span className="font-primary text-sm">Dashboard</span>
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center space-x-2 border border-gray-300 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-50 transition-all"
+                >
+                  <LogOut className="h-4 w-4" />
+                  <span className="font-primary text-sm">Logout</span>
+                </button>
+              </div>
+            ) : (
+              // Unauthenticated user - show Login and Sign Up
+              <div className="flex items-center space-x-3">
+                <Link
+                  to="/login"
+                  className="font-primary text-sm font-medium text-gray-700 hover:text-violet-600 transition-colors px-4 py-2 rounded-full hover:bg-violet-50"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/signup"
+                  className="flex items-center space-x-2 bg-gradient-cosmic text-white px-4 py-2 rounded-full hover:shadow-lg transition-all"
+                >
+                  <User className="h-4 w-4" />
+                  <span className="font-primary text-sm">Sign Up</span>
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -95,14 +135,48 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="border-t border-violet-100 pt-2">
-              <Link
-                to="/dashboard"
-                className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gradient-cosmic hover:shadow-lg transition-all"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Dashboard
-              </Link>
+            
+            {/* Mobile Auth Section */}
+            <div className="border-t border-violet-100 pt-2 space-y-2">
+              {user ? (
+                // Authenticated user - mobile
+                <>
+                  <Link
+                    to="/dashboard"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gradient-cosmic hover:shadow-lg transition-all"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Dashboard
+                  </Link>
+                  <button
+                    onClick={() => {
+                      handleLogout();
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                // Unauthenticated user - mobile
+                <>
+                  <Link
+                    to="/login"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    to="/signup"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gradient-cosmic hover:shadow-lg transition-all"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
