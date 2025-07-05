@@ -83,6 +83,7 @@ const ShopPage = () => {
             ))}
           </div>
         </div>
+      </div>
     </div>
   );
 };
