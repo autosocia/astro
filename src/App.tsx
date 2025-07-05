@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './hooks/useAuth';
 import ProtectedRoute from './components/ProtectedRoute';
 import ErrorBoundary from './components/ErrorBoundary';
+import DashboardLayout from './components/DashboardLayout';
 
 // Auth Pages
 import LoginPage from './pages/auth/LoginPage';
@@ -50,54 +51,74 @@ function App() {
             {/* Protected Dashboard Routes */}
             <Route path="/dashboard" element={
               <ProtectedRoute>
-                <DashboardPage />
+                <DashboardLayout>
+                  <DashboardPage />
+                </DashboardLayout>
               </ProtectedRoute>
             } />
 
             {/* Protected Feature Routes */}
             <Route path="/birth-chart" element={
               <ProtectedRoute>
-                <BirthChartPage />
+                <DashboardLayout>
+                  <BirthChartPage />
+                </DashboardLayout>
               </ProtectedRoute>
             } />
             <Route path="/match-horoscope" element={
               <ProtectedRoute>
-                <MatchHoroscopePage />
+                <DashboardLayout>
+                  <MatchHoroscopePage />
+                </DashboardLayout>
               </ProtectedRoute>
             } />
             <Route path="/talk" element={
               <ProtectedRoute>
-                <TalkPage />
+                <DashboardLayout>
+                  <TalkPage />
+                </DashboardLayout>
               </ProtectedRoute>
             } />
             <Route path="/daily" element={
               <ProtectedRoute>
-                <DailyPage />
+                <DashboardLayout>
+                  <DailyPage />
+                </DashboardLayout>
               </ProtectedRoute>
             } />
 
             {/* Life Predictions Route */}
-            <Route path="/life-predictions" element={<ProtectedRoute><LifePredictionPage /></ProtectedRoute>} />
+            <Route path="/life-predictions" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <LifePredictionPage />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
 
             {/* New Protected Feature Routes */}
             <Route path="/kundli-matching" element={
               <ProtectedRoute>
-                <KundliMatchingPage />
+                <DashboardLayout>
+                  <KundliMatchingPage />
+                </DashboardLayout>
               </ProtectedRoute>
             } />
             <Route path="/ai-astrologer" element={
               <ProtectedRoute>
-                <AIAstrologerPage />
+                <DashboardLayout>
+                  <AIAstrologerPage />
+                </DashboardLayout>
               </ProtectedRoute>
             } />
 
             {/* Stub routes for other features */}
-            <Route path="/transit" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Transit Report</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
-            <Route path="/gemstones" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Gemstones Report</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
-            <Route path="/lal-kitab" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Lal Kitab</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
-            <Route path="/mangal-dosha" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Mangal Dosha</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
-            <Route path="/numerology" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Numerology</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
-            <Route path="/nakshatra" element={<ProtectedRoute><div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center"><div className="text-white text-center"><h1 className="text-2xl mb-4">Nakshatra</h1><p>Coming soon...</p></div></div></ProtectedRoute>} />
+            <Route path="/transit" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Transit Report</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
+            <Route path="/gemstones" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Gemstones Report</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
+            <Route path="/lal-kitab" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Lal Kitab</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
+            <Route path="/mangal-dosha" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Mangal Dosha</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
+            <Route path="/numerology" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Numerology</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
+            <Route path="/nakshatra" element={<ProtectedRoute><DashboardLayout><div className="flex items-center justify-center h-full"><div className="text-white text-center"><h1 className="text-2xl mb-4">Nakshatra</h1><p>Coming soon...</p></div></div></DashboardLayout></ProtectedRoute>} />
 
             {/* Public Routes with Navbar/Footer */}
             <Route path="/" element={
@@ -148,7 +169,9 @@ function App() {
             {/* Settings Route */}
             <Route path="/settings" element={
               <ProtectedRoute>
-                <SettingsPage />
+                <DashboardLayout>
+                  <SettingsPage />
+                </DashboardLayout>
               </ProtectedRoute>
             } />
 

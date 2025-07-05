@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Heart, Users, Star, Calendar, MapPin, Clock } from 'lucide-react';
+import { Heart, Users, Star, Calendar, MapPin, Clock } from 'lucide-react';
 
 const KundliMatchingPage = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -270,29 +269,17 @@ const KundliMatchingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-6">
-          <Link
-            to="/dashboard"
-            className="inline-flex items-center space-x-2 text-white/70 hover:text-white transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span>Back to Dashboard</span>
-          </Link>
-        </div>
-
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-            Kundli Matching
-          </h1>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Find your perfect match with authentic Vedic astrology compatibility analysis
-          </p>
-        </div>
-
-        {renderStep()}
+    <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          Kundli Matching
+        </h1>
+        <p className="text-xl text-white/70 max-w-2xl mx-auto">
+          Find your perfect match with authentic Vedic astrology compatibility analysis
+        </p>
       </div>
+
+      {renderStep()}
     </div>
   );
 };

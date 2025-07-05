@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { 
-  ArrowLeft, 
   User, 
   Plus, 
   Edit, 
@@ -249,30 +247,18 @@ const SettingsPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-6">
-          <Link
-            to="/dashboard"
-            className="inline-flex items-center space-x-2 text-white/70 hover:text-white transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span>Back to Dashboard</span>
-          </Link>
-        </div>
-
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-            Manage Persons
-          </h1>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Add and manage birth details for family members and friends
-          </p>
-        </div>
-
-        {showForm && renderForm()}
-        {renderPersonsList()}
+    <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          Manage Persons
+        </h1>
+        <p className="text-xl text-white/70 max-w-2xl mx-auto">
+          Add and manage birth details for family members and friends
+        </p>
       </div>
+
+      {showForm && renderForm()}
+      {renderPersonsList()}
     </div>
   );
 };

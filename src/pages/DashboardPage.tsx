@@ -47,12 +47,9 @@ import {
   ChevronDown,
   ChevronRight
 } from 'lucide-react';
-import DashboardNavbar from '../components/DashboardNavbar';
-import Sidebar from '../components/Sidebar';
 import FeatureCard from '../components/FeatureCard';
 
 const DashboardPage = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   const mainFeatures = [
@@ -521,81 +518,71 @@ const DashboardPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
-      <DashboardNavbar onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
-      
-      <div className="flex min-h-[calc(100vh-80px)]">
-        {/* Desktop Sidebar */}
-        <div className="hidden lg:block lg:w-64 lg:flex-shrink-0">
-          <Sidebar isOpen={true} onClose={() => {}} />
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="w-full max-w-none"
+    >
+      {renderHeader()}
+
+      {/* Welcome Section */}
+      <div className="mb-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+          Your Cosmic Dashboard
+        </h2>
+        <p className="text-white/70 text-lg lg:text-xl leading-relaxed max-w-4xl">
+          Explore comprehensive astrology services and discover your destiny with our expert guidance
+        </p>
+      </div>
+
+      {/* Main Feature Cards Grid */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-display font-semibold text-white mb-6">Astrology Services</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {mainFeatures.map((feature, index) => (
+            <div key={feature.link} className="w-full">
+              <FeatureCard
+                {...feature}
+                delay={index * 0.05}
+              />
+            </div>
+          ))}
         </div>
-        
-        {/* Mobile Sidebar Overlay */}
-        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      </div>
 
-        {/* Main Content */}
-        <div className="flex-1 w-full min-w-0">
-          <div className="h-full p-4 sm:p-6 lg:p-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="w-full max-w-none"
-            >
-              {renderHeader()}
+      {/* Calculations Section */}
+      {renderExpandableSection(
+        "Calculations: If you know Astrology",
+        calculationLinks,
+        "calculations",
+        <Calculator className="h-6 w-6 text-blue-400" />
+      )}
 
-              {/* Welcome Section */}
-              <div className="mb-8">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-                  Your Cosmic Dashboard
-                </h2>
-                <p className="text-white/70 text-lg lg:text-xl leading-relaxed max-w-4xl">
-                  Explore comprehensive astrology services and discover your destiny with our expert guidance
-                </p>
-              </div>
+      {/* Paid Consultation Section */}
+      {renderExpandableSection(
+        "Paid Consultation",
+        paidConsultationLinks,
+        "consultation",
+        <Phone className="h-6 w-6 text-green-400" />
+      )}
 
-              {/* Main Feature Cards Grid */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-display font-semibold text-white mb-6">Astrology Services</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {mainFeatures.map((feature, index) => (
-                    <div key={feature.link} className="w-full">
-                      <FeatureCard
-                        {...feature}
-                        delay={index * 0.05}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+      {/* Ask Question Section */}
+      {renderAskQuestionSection()}
 
-              {/* Calculations Section */}
-              {renderExpandableSection(
-                "Calculations: If you know Astrology",
-                calculationLinks,
-                "calculations",
-                <Calculator className="h-6 w-6 text-blue-400" />
-              )}
+      {/* Paid Services Section */}
+      {renderPaidServicesSection()}
 
-              {/* Paid Consultation Section */}
-              {renderExpandableSection(
-                "Paid Consultation",
-                paidConsultationLinks,
-                "consultation",
-                <Phone className="h-6 w-6 text-green-400" />
-              )}
+      {/* About Section */}
+      {renderAboutSection()}
 
-              {/* Ask Question Section */}
-              {renderAskQuestionSection()}
+      {/* Footer */}
+      {renderFooter()}
+    </motion.div>
+  );
+};
 
-              {/* Paid Services Section */}
-              {renderPaidServicesSection()}
+export default DashboardPage;
 
-              {/* About Section */}
-              {renderAboutSection()}
-
-              {/* Footer */}
-              {renderFooter()}
-            </motion.div>
           </div>
         </div>
       </div>
