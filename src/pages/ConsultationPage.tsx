@@ -129,6 +129,7 @@ const ConsultationPage = () => {
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };
