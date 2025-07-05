@@ -58,3 +58,16 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
 }
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+@keyframes train-move {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+.train-animation {
+  animation: train-move 20s linear infinite;
+}
