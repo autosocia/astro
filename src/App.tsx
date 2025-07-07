@@ -26,6 +26,11 @@ import LifePredictionPage from './pages/LifePredictionPage';
 import KundliMatchingPage from './pages/features/KundliMatchingPage';
 import AIAstrologerPage from './pages/features/AIAstrologerPage';
 
+// Media Pages
+import TVAppearancesPage from './pages/media/TVAppearancesPage';
+import ExpertisePage from './pages/media/ExpertisePage';
+import AwardsPage from './pages/media/AwardsPage';
+
 // Legacy Pages (keeping for compatibility)
 import KundliPage from './pages/KundliPage';
 import MatchmakingPage from './pages/MatchmakingPage';
@@ -122,6 +127,29 @@ function App() {
                 <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
                   <Navbar />
                   <HomePage />
+                  <Footer />
+                </div>
+              } />
+
+              {/* Media Routes */}
+              <Route path="/media/tv-appearances" element={
+                <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
+                  <Navbar />
+                  <TVAppearancesPage />
+                  <Footer />
+                </div>
+              } />
+              <Route path="/media/expertise" element={
+                <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
+                  <Navbar />
+                  <ExpertisePage />
+                  <Footer />
+                </div>
+              } />
+              <Route path="/media/awards" element={
+                <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50">
+                  <Navbar />
+                  <AwardsPage />
                   <Footer />
                 </div>
               } />

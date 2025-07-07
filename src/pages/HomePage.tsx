@@ -128,12 +128,13 @@ const HomePage = () => {
             {/* Media Cards Train */}
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
               {/* TV Appearance Card */}
-              <div className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-violet-200 transform perspective-1000 hover:scale-105 transition-all duration-300">
+              <Link to="/media/tv-appearances" className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-violet-200 transform perspective-1000 hover:scale-105 transition-all duration-300 block">
                 <div className="relative overflow-hidden">
                   <img
-                    src="/WhatsApp Image 2025-07-04 at 19.06.01.jpeg"
+                    src="/WhatsApp Image 2025-07-04 at 19.05.57.jpeg"
                     alt="Dr. Roohi Jain on TV"
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-64 object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse">
@@ -152,15 +153,16 @@ const HomePage = () => {
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Professional Portrait Card */}
-              <div className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 transform perspective-1000 hover:scale-105 transition-all duration-300">
+              <Link to="/media/expertise" className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 transform perspective-1000 hover:scale-105 transition-all duration-300 block">
                 <div className="relative overflow-hidden">
                   <img
-                    src="/WhatsApp Image 2025-07-04 at 19.06.00 copy.jpeg"
+                    src="/WhatsApp Image 2025-07-04 at 19.06.00 (1).jpeg"
                     alt="Dr. Roohi Jain Professional Portrait"
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-64 object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -179,15 +181,16 @@ const HomePage = () => {
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Awards & Recognition Card */}
-              <div className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-200 transform perspective-1000 md:col-span-2 lg:col-span-1 hover:scale-105 transition-all duration-300">
+              <Link to="/media/awards" className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-200 transform perspective-1000 md:col-span-2 lg:col-span-1 hover:scale-105 transition-all duration-300 block">
                 <div className="relative overflow-hidden">
                   <img
                     src="/WhatsApp Image 2025-07-04 at 19.06.01 (2).jpeg"
                     alt="Dr. Roohi Jain Awards"
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-64 object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-pink-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
@@ -207,7 +210,7 @@ const HomePage = () => {
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             {/* Floating Elements */}
