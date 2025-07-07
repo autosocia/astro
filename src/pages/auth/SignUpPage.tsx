@@ -47,7 +47,7 @@ const SignUpPage = () => {
 
     try {
       await signup(formData.email, formData.password, formData.name);
-      navigate('/onboarding');
+      navigate('/onboarding', { replace: true });
     } catch (err: any) {
       setError(err.message || 'Failed to create account');
     } finally {
@@ -61,7 +61,7 @@ const SignUpPage = () => {
 
     try {
       await loginWithGoogle();
-      navigate('/onboarding');
+      navigate('/onboarding', { replace: true });
     } catch (err: any) {
       setError(err.message || 'Failed to sign up with Google');
     } finally {

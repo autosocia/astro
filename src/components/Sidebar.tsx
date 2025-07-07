@@ -85,7 +85,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       `}>
         {/* Header */}
         <div className="flex items-center justify-between p-4 lg:p-6 border-b border-white/10 lg:border-none">
-          <div className="flex items-center space-x-3">
+          <Link to="/dashboard" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="relative">
               <Star className="h-7 w-7 lg:h-8 lg:w-8 text-yellow-400" />
               <Sparkles className="h-3 w-3 lg:h-4 lg:w-4 text-amber-400 absolute -top-1 -right-1 animate-pulse" />
@@ -94,7 +94,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <h2 className="text-white font-bold text-lg lg:text-xl">Astro</h2>
               <p className="text-white/60 text-xs">Dashboard</p>
             </div>
-          </div>
+          </Link>
           
           {/* Close button for mobile */}
           <button

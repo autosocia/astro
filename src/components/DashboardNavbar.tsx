@@ -42,7 +42,7 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({ onMenuToggle }) => {
           </button>
 
           {/* Logo - visible on mobile when sidebar is closed */}
-          <div className="lg:hidden flex items-center space-x-2 min-w-0">
+          <Link to="/dashboard" className="lg:hidden flex items-center space-x-2 min-w-0 hover:opacity-80 transition-opacity">
             <div className="relative">
               <Star className="h-6 w-6 sm:h-7 sm:w-7 text-yellow-400" />
               <Sparkles className="h-3 w-3 text-amber-400 absolute -top-1 -right-1 animate-pulse" />
@@ -51,7 +51,7 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({ onMenuToggle }) => {
               <span className="text-white font-semibold text-sm sm:text-base truncate">Astro</span>
               <span className="text-white/60 text-xs truncate">Dashboard</span>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Center */}
@@ -81,7 +81,7 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({ onMenuToggle }) => {
                 <User className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
               </div>
               <span className="hidden md:block font-medium text-sm sm:text-base truncate max-w-24 lg:max-w-32">
-                {user?.displayName || user?.email?.split('@')[0] || 'User'}
+                Welcome, {user?.displayName || user?.email?.split('@')[0] || 'User'}
               </span>
             </button>
 

@@ -62,13 +62,13 @@ const HomePage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
-              Welcome to the World of
+              Discover Your Destiny with
               <span className="block text-transparent bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text">
                 Dr. Roohi Jain
               </span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-violet-200 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Step into a journey of cosmic clarity with Dr. Roohi Jain, a trusted name in astrology with a legacy of guiding souls toward their true purpose. With her profound knowledge of Vedic astrology, intuitive wisdom, and years of experience, she empowers individuals to navigate life's challenges and embrace their destiny.
+              "Every soul has a unique cosmic blueprint. Let me guide you to unlock yours and illuminate the path to your highest potential." - Dr. Roohi Jain. Experience the wisdom of India's most trusted astrologer, combining ancient Vedic knowledge with modern insights to transform your life's journey.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
@@ -90,15 +90,15 @@ const HomePage = () => {
             <div className="flex items-center justify-center space-x-8 text-violet-200">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-5 w-5 text-green-400" />
-                <span>Celebrity Astrologer</span>
+                <span>India's Most Trusted Astrologer</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-5 w-5 text-green-400" />
-                <span>TV Personality</span>
+                <span>Featured on National TV</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-5 w-5 text-green-400" />
-                <span>Award Winner</span>
+                <span>25+ Years Experience</span>
               </div>
             </div>
           </div>
@@ -111,10 +111,10 @@ const HomePage = () => {
           <div className="text-center mb-16">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6">
-                From the Astrologer's Desk
+               Meet Dr. Roohi Jain
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Witness Dr. Roohi Jain's journey as a renowned astrologer, TV personality, and spiritual guide
+               Your trusted guide to cosmic wisdom and spiritual enlightenment
               </p>
             </div>
           </div>
@@ -142,13 +142,13 @@ const HomePage = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-violet-600 transition-colors">
-                    Television Appearances
+                    Media Presence
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">
-                    Regular featured astrologer on major news channels, sharing cosmic insights and predictions with millions of viewers.
+                    Trusted voice on national television, sharing profound astrological insights and predictions that have guided millions across India.
                   </p>
                   <div className="flex items-center text-violet-600 font-semibold">
-                    <span>Watch Insights</span>
+                    <span>See Media Coverage</span>
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
@@ -169,13 +169,13 @@ const HomePage = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
-                    Professional Expertise
+                    Spiritual Mastery
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">
-                    Certified astrologer, numerologist, and Vastu expert with deep knowledge in Tarot reading and spiritual guidance.
+                    Master of Vedic astrology, numerology, Vastu Shastra, and Tarot reading. Her intuitive wisdom has transformed countless lives with precise predictions and healing guidance.
                   </p>
                   <div className="flex items-center text-amber-600 font-semibold">
-                    <span>Learn More</span>
+                    <span>Explore Expertise</span>
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
@@ -197,13 +197,13 @@ const HomePage = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors">
-                    Awards & Recognition
+                    Legacy of Excellence
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">
-                    Honored with prestigious awards for excellence in astrology and spiritual guidance, recognized by industry leaders.
+                    Recipient of numerous accolades for her exceptional contribution to Vedic astrology and her compassionate service to humanity's spiritual growth.
                   </p>
                   <div className="flex items-center text-pink-600 font-semibold">
-                    <span>View Achievements</span>
+                    <span>See Recognition</span>
                     <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
@@ -219,14 +219,14 @@ const HomePage = () => {
           {/* Call to Action */}
           <div className="text-center mt-16">
             <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-              Whether you seek answers about love, career, or personal growth, Dr. Roohi Jain's precise predictions and compassionate guidance illuminate your path like the stars above.
+             "I believe every person deserves to know their true potential and life purpose. Through the ancient wisdom of Vedic astrology, I help souls find their destined path to happiness and success." - Dr. Roohi Jain
             </p>
             <Link
               to="/consultation"
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-violet-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
               <MessageCircle className="h-5 w-5" />
-              <span>Book Your Reading</span>
+             <span>Consult Dr. Roohi Jain</span>
             </Link>
           </div>
         </div>
@@ -274,23 +274,23 @@ const HomePage = () => {
       <section className="py-20 bg-gradient-to-r from-violet-900 to-purple-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-            Ready to Discover Your Destiny?
+            Begin Your Spiritual Journey Today
           </h2>
           <p className="text-xl text-violet-200 mb-8 max-w-2xl mx-auto">
-            Join thousands of users who have unlocked their cosmic potential with Astro
+            Join thousands who have found clarity, purpose, and happiness through Dr. Roohi Jain's guidance
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link
               to="/kundli"
               className="bg-gradient-to-r from-amber-400 to-yellow-300 text-purple-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
-              Start Your Journey
+              Get Your Free Birth Chart
             </Link>
             <Link
               to="/consultation"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-violet-900 transition-all"
             >
-              Book Consultation
+              Speak with Dr. Roohi Jain
             </Link>
           </div>
         </div>
