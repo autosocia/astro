@@ -359,11 +359,16 @@ const MatchmakingPage = () => {
             <Search className="h-4 w-4" />
             <span className="hidden sm:inline">Search</span>
           </button>
-          <button className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 sm:px-4 py-2 rounded-lg hover:shadow-xl transition-all text-sm">
+          <a
+            href="https://www.astrosage.com/talk-to-astrologer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 sm:px-4 py-2 rounded-lg hover:shadow-xl transition-all text-sm"
+          >
             <MessageCircle className="h-4 w-4" />
             <span className="hidden sm:inline">Talk to Astrologer</span>
             <span className="sm:hidden">Talk</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

@@ -331,15 +331,15 @@ const DashboardPage = () => {
 
   const renderHeader = () => (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center space-x-3">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 mb-4">
+        <div className="flex items-center space-x-3 min-w-0">
           <Star className="h-8 w-8 text-yellow-400" />
           <div>
-            <h1 className="text-2xl font-display font-bold text-white">Welcome to Astro.com</h1>
-            <p className="text-white/70 text-sm">Your Complete Astrology Dashboard</p>
+            <h1 className="text-xl sm:text-2xl font-display font-bold text-white">Welcome to Astro.com</h1>
+            <p className="text-white/70 text-xs sm:text-sm">Your Complete Astrology Dashboard</p>
           </div>
         </div>
-        <div className="flex items-center space-x-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors">
             <Print className="h-4 w-4" />
             <span className="hidden sm:inline">Print</span>
@@ -352,10 +352,16 @@ const DashboardPage = () => {
             <Search className="h-4 w-4" />
             <span className="hidden sm:inline">Search</span>
           </button>
-          <button className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:shadow-xl transition-all">
+          <a
+            href="https://www.astrosage.com/talk-to-astrologer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 sm:px-4 py-2 rounded-lg hover:shadow-xl transition-all text-sm"
+          >
             <MessageCircle className="h-4 w-4" />
-            <span>Talk to Astrologer</span>
-          </button>
+            <span className="hidden sm:inline">Talk to Astrologer</span>
+            <span className="sm:hidden">Talk</span>
+          </a>
         </div>
       </div>
     </div>
