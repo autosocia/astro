@@ -1,35 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  Heart, 
-  Users, 
-  Star, 
-  Calendar, 
-  MapPin, 
-  Clock, 
-  ChevronDown, 
-  ChevronUp, 
-  Download, 
-  Share2, 
-  Phone, 
-  MessageCircle, 
-  Search, 
-  Save, 
-  Printer as Print, 
-  Settings, 
-  Sparkles, 
-  BookOpen, 
-  Gem, 
-  Shield, 
-  TrendingUp, 
-  FileText, 
-  Gift, 
-  Home, 
-  AlertTriangle,
-  User,
-  Calculator,
-  Eye
-} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Heart, Users, Star, Calendar, MapPin, Clock, ChevronDown, ChevronUp, Download, Share2, Phone, MessageCircle, Search, Save, Printer as Print, Settings, Sparkles, BookOpen, Gem, Shield, TrendingUp, FileText, Gift, Home, AlertTriangle } from 'lucide-react';
 
 interface PersonDetails {
   name: string;
@@ -118,10 +89,12 @@ const MatchmakingPage = () => {
   const [girlFormOpen, setGirlFormOpen] = useState(false);
   const [expandedGuna, setExpandedGuna] = useState<string | null>(null);
 
-  // Mock geolocation service
+  // Mock geolocation service - in production, use Google Maps API or similar
   const getLocationData = async (place: string): Promise<LocationData | null> => {
+    // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
     
+    // Mock location data for common Indian cities
     const locationMap: Record<string, LocationData> = {
       'new delhi': { latitude: 28.6139, longitude: 77.2090, timeZone: 5.5 },
       'delhi': { latitude: 28.6500, longitude: 77.2167, timeZone: 5.5 },
@@ -181,19 +154,18 @@ const MatchmakingPage = () => {
     return 'Unknown';
   };
 
+  // Mock Guna Milan calculations - in production, integrate with astrology API
   const calculateGunaScores = (boy: PersonDetails, girl: PersonDetails): GunaScore[] => {
-    const boySign = getZodiacSign(boy.day, boy.month);
-    const girlSign = getZodiacSign(girl.day, girl.month);
+    // Sample calculations based on names and birth details
+    // In real implementation, this would use complex Vedic astrology algorithms
     
-    const compatibilityFactor = boySign === girlSign ? 1 : 0.75;
-    
-    return [
+    const gunas: GunaScore[] = [
       {
         guna: 'Varna',
         boy: 'Sudra',
         girl: 'Sudra',
         maximum: 1,
-        obtained: Math.round(1 * compatibilityFactor),
+        obtained: 1,
         areaOfLife: 'Work',
         interpretation: 'Both belong to the same Varna, indicating harmonious merge of thoughts and ideas. This creates good harmony in professional and social life.'
       },
@@ -202,7 +174,7 @@ const MatchmakingPage = () => {
         boy: 'Manav',
         girl: 'Manav',
         maximum: 2,
-        obtained: Math.round(2 * compatibilityFactor),
+        obtained: 2,
         areaOfLife: 'Dominance',
         interpretation: 'Same Vasya indicates mutual support and understanding. Both partners will have long healthy life with mutual respect and care.'
       },
@@ -211,7 +183,7 @@ const MatchmakingPage = () => {
         boy: 'Sampat',
         girl: 'Sampat',
         maximum: 3,
-        obtained: Math.round(3 * compatibilityFactor),
+        obtained: 3,
         areaOfLife: 'Destiny',
         interpretation: 'Best compatible Tara indicates excellent bonding and understanding. This brings prosperity and good fortune to the couple.'
       },
@@ -220,16 +192,16 @@ const MatchmakingPage = () => {
         boy: 'Mahis',
         girl: 'Mahis',
         maximum: 4,
-        obtained: Math.round(4 * compatibilityFactor),
+        obtained: 4,
         areaOfLife: 'Mentality',
         interpretation: 'Same Yoni indicates fair compatibility and understanding. This brings financial happiness and mental peace to the relationship.'
       },
       {
-        guna: 'Graha Maitri',
+        guna: 'Maitri',
         boy: 'Venus',
         girl: 'Venus',
         maximum: 5,
-        obtained: Math.round(5 * compatibilityFactor),
+        obtained: 5,
         areaOfLife: 'Compatibility',
         interpretation: 'Same ruling planet indicates full support and understanding. This creates deep emotional bond and mutual respect.'
       },
@@ -238,29 +210,31 @@ const MatchmakingPage = () => {
         boy: 'Devta',
         girl: 'Devta',
         maximum: 6,
-        obtained: Math.round(6 * compatibilityFactor),
+        obtained: 6,
         areaOfLife: 'Guna Level',
         interpretation: 'Both are peace-loving and spiritual. This creates good harmony and understanding in the relationship with shared values.'
       },
       {
         guna: 'Bhakoot',
-        boy: boySign,
-        girl: girlSign,
+        boy: 'Libra',
+        girl: 'Libra',
         maximum: 7,
-        obtained: Math.round(7 * compatibilityFactor),
+        obtained: 7,
         areaOfLife: 'Love',
-        interpretation: boySign === girlSign ? 'Same Rashi indicates sensible rapport and understanding. This creates a beautiful home environment with mutual love and care.' : 'Different Rashi may require understanding and adjustment for harmonious relationship.'
+        interpretation: 'Same Rashi indicates sensible rapport and understanding. This creates a beautiful home environment with mutual love and care.'
       },
       {
         guna: 'Nadi',
         boy: 'Antya',
         girl: 'Antya',
         maximum: 8,
-        obtained: boySign === girlSign ? 0 : Math.round(8 * compatibilityFactor),
+        obtained: 0,
         areaOfLife: 'Health',
-        interpretation: boySign === girlSign ? 'Same Nadi has negative effect on health and progeny. This may cause ego clashes and health issues. Remedies are recommended.' : 'Different Nadi indicates good health compatibility and progeny prospects.'
+        interpretation: 'Same Nadi has negative effect on health and progeny. This may cause ego clashes and health issues. Remedies are recommended.'
       }
     ];
+
+    return gunas;
   };
 
   const calculateMatchingResult = (gunaScores: GunaScore[]): MatchingResult => {
@@ -367,20 +341,6 @@ const MatchmakingPage = () => {
           </div>
         </div>
         <div className="flex items-center space-x-3">
-          <Link
-            to="/"
-            className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors"
-          >
-            <Home className="h-4 w-4" />
-            <span className="hidden sm:inline">Home</span>
-          </Link>
-          <Link
-            to="/features"
-            className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors"
-          >
-            <Star className="h-4 w-4" />
-            <span className="hidden sm:inline">Features</span>
-          </Link>
           <button
             onClick={handlePrint}
             className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors"
@@ -395,15 +355,14 @@ const MatchmakingPage = () => {
             <Save className="h-4 w-4" />
             <span className="hidden sm:inline">Save</span>
           </button>
-          <a
-            href="https://www.astrosage.com/talk-to-astrologer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-all"
-          >
+          <button className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors">
+            <Search className="h-4 w-4" />
+            <span className="hidden sm:inline">Search</span>
+          </button>
+          <button className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:shadow-xl transition-all">
             <MessageCircle className="h-4 w-4" />
             <span>Talk to Astrologer</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -423,7 +382,7 @@ const MatchmakingPage = () => {
       >
         <div className="flex items-center space-x-3">
           <div className={`p-3 rounded-lg ${type === 'boy' ? 'bg-blue-500/20' : 'bg-pink-500/20'}`}>
-            <User className={`h-6 w-6 ${type === 'boy' ? 'text-blue-400' : 'text-pink-400'}`} />
+            <Users className={`h-6 w-6 ${type === 'boy' ? 'text-blue-400' : 'text-pink-400'}`} />
           </div>
           <h3 className="text-xl font-display font-semibold text-white">
             {type === 'boy' ? "Boy's Details" : "Girl's Details"}
@@ -433,7 +392,11 @@ const MatchmakingPage = () => {
       </button>
       
       {isOpen && (
-        <div className="px-6 pb-6">
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          className="px-6 pb-6"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-white/80 text-sm font-medium mb-2">Name</label>
@@ -495,7 +458,7 @@ const MatchmakingPage = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
@@ -691,9 +654,13 @@ const MatchmakingPage = () => {
             </button>
             
             {expandedGuna === guna.guna && (
-              <div className="px-4 pb-4">
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                className="px-4 pb-4"
+              >
                 <p className="text-white/80 leading-relaxed">{guna.interpretation}</p>
-              </div>
+              </motion.div>
             )}
           </div>
         ))}
@@ -877,7 +844,7 @@ const MatchmakingPage = () => {
           All copyrights reserved © 2025 Astro - Dr. Roohi Jain
         </p>
         <div className="flex items-center justify-center space-x-4 text-white/60 text-sm">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
+          <button className="hover:text-white transition-colors">Home</button>
           <span>|</span>
           <button className="hover:text-white transition-colors">Feedback</button>
           <span>|</span>
@@ -895,7 +862,7 @@ const MatchmakingPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-amber-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {renderHeader()}
 
