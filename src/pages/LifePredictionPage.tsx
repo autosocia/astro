@@ -510,10 +510,12 @@ const LifePredictionPage = () => {
       <h3 className="text-xl font-display font-semibold text-white mb-6">About Astro</h3>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
+            Your Trusted Source for Vedic Astrology
+          </h2>
           <p className="text-white/80 leading-relaxed mb-6">
             Astro is India's leading astrology platform, providing accurate Vedic astrology services 
-          <p className="text-white/70 text-base sm:text-lg">
             for all your life questions including personality analysis, life predictions, and spiritual guidance.
           </p>
           
