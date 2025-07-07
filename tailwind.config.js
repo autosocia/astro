@@ -30,6 +30,15 @@ export default {
           '-webkit-box-orient': 'vertical',
           '-webkit-line-clamp': '3',
         },
+        '.scrollbar-thin': {
+          'scrollbar-width': 'thin',
+        },
+        '.scrollbar-thumb-white\\/20': {
+          'scrollbar-color': 'rgba(255, 255, 255, 0.2) transparent',
+        },
+        '.scrollbar-track-transparent': {
+          'scrollbar-track-color': 'transparent',
+        },
       }
       addUtilities(newUtilities)
     }

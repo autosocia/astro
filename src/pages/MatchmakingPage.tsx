@@ -332,36 +332,37 @@ const MatchmakingPage = () => {
 
   const renderHeader = () => (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center space-x-3">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 mb-4">
+        <div className="flex items-center space-x-3 min-w-0">
           <Heart className="h-8 w-8 text-pink-400" />
           <div>
-            <h1 className="text-2xl font-display font-bold text-white">Welcome to Astro.com</h1>
-            <p className="text-white/70 text-sm">Match Making & Compatibility Analysis</p>
+            <h1 className="text-xl sm:text-2xl font-display font-bold text-white">Welcome to Astro.com</h1>
+            <p className="text-white/70 text-xs sm:text-sm">Match Making & Compatibility Analysis</p>
           </div>
         </div>
-        <div className="flex items-center space-x-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button
             onClick={handlePrint}
-            className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors"
+            className="flex items-center space-x-1 sm:space-x-2 bg-white/10 text-white px-2 sm:px-3 py-2 rounded-lg hover:bg-white/20 transition-colors text-sm"
           >
             <Print className="h-4 w-4" />
             <span className="hidden sm:inline">Print</span>
           </button>
           <button
             onClick={handleSave}
-            className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors"
+            className="flex items-center space-x-1 sm:space-x-2 bg-white/10 text-white px-2 sm:px-3 py-2 rounded-lg hover:bg-white/20 transition-colors text-sm"
           >
             <Save className="h-4 w-4" />
             <span className="hidden sm:inline">Save</span>
           </button>
-          <button className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors">
+          <button className="flex items-center space-x-1 sm:space-x-2 bg-white/10 text-white px-2 sm:px-3 py-2 rounded-lg hover:bg-white/20 transition-colors text-sm">
             <Search className="h-4 w-4" />
             <span className="hidden sm:inline">Search</span>
           </button>
-          <button className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:shadow-xl transition-all">
+          <button className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 sm:px-4 py-2 rounded-lg hover:shadow-xl transition-all text-sm">
             <MessageCircle className="h-4 w-4" />
-            <span>Talk to Astrologer</span>
+            <span className="hidden sm:inline">Talk to Astrologer</span>
+            <span className="sm:hidden">Talk</span>
           </button>
         </div>
       </div>
@@ -466,45 +467,45 @@ const MatchmakingPage = () => {
   const renderBirthDetailsTable = () => (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-8">
       <h3 className="text-2xl font-display font-semibold text-white mb-6">Birth Details</h3>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
         <table className="w-full text-white">
           <thead>
             <tr className="border-b border-white/20">
-              <th className="text-left py-3 px-4">Details</th>
-              <th className="text-left py-3 px-4">Boy</th>
-              <th className="text-left py-3 px-4">Girl</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Details</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Boy</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Girl</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-white/10">
-              <td className="py-3 px-4 font-semibold">Name</td>
-              <td className="py-3 px-4">{boyDetails.name}</td>
-              <td className="py-3 px-4">{girlDetails.name}</td>
+              <td className="py-3 px-4 font-semibold whitespace-nowrap">Name</td>
+              <td className="py-3 px-4 whitespace-nowrap">{boyDetails.name}</td>
+              <td className="py-3 px-4 whitespace-nowrap">{girlDetails.name}</td>
             </tr>
             <tr className="border-b border-white/10">
-              <td className="py-3 px-4 font-semibold">Date & Time</td>
-              <td className="py-3 px-4">{`${boyDetails.day}/${boyDetails.month}/${boyDetails.year} ${boyDetails.hour}:${boyDetails.minute.toString().padStart(2, '0')}`}</td>
-              <td className="py-3 px-4">{`${girlDetails.day}/${girlDetails.month}/${girlDetails.year} ${girlDetails.hour}:${girlDetails.minute.toString().padStart(2, '0')}`}</td>
+              <td className="py-3 px-4 font-semibold whitespace-nowrap">Date & Time</td>
+              <td className="py-3 px-4 whitespace-nowrap">{`${boyDetails.day}/${boyDetails.month}/${boyDetails.year} ${boyDetails.hour}:${boyDetails.minute.toString().padStart(2, '0')}`}</td>
+              <td className="py-3 px-4 whitespace-nowrap">{`${girlDetails.day}/${girlDetails.month}/${girlDetails.year} ${girlDetails.hour}:${girlDetails.minute.toString().padStart(2, '0')}`}</td>
             </tr>
             <tr className="border-b border-white/10">
-              <td className="py-3 px-4 font-semibold">Place</td>
-              <td className="py-3 px-4">{boyDetails.place}</td>
-              <td className="py-3 px-4">{girlDetails.place}</td>
+              <td className="py-3 px-4 font-semibold whitespace-nowrap">Place</td>
+              <td className="py-3 px-4 whitespace-nowrap">{boyDetails.place}</td>
+              <td className="py-3 px-4 whitespace-nowrap">{girlDetails.place}</td>
             </tr>
             <tr className="border-b border-white/10">
-              <td className="py-3 px-4 font-semibold">Longitude</td>
-              <td className="py-3 px-4">{boyDetails.longitude}</td>
-              <td className="py-3 px-4">{girlDetails.longitude}</td>
+              <td className="py-3 px-4 font-semibold whitespace-nowrap">Longitude</td>
+              <td className="py-3 px-4 whitespace-nowrap">{boyDetails.longitude}</td>
+              <td className="py-3 px-4 whitespace-nowrap">{girlDetails.longitude}</td>
             </tr>
             <tr className="border-b border-white/10">
-              <td className="py-3 px-4 font-semibold">Latitude</td>
-              <td className="py-3 px-4">{boyDetails.latitude}</td>
-              <td className="py-3 px-4">{girlDetails.latitude}</td>
+              <td className="py-3 px-4 font-semibold whitespace-nowrap">Latitude</td>
+              <td className="py-3 px-4 whitespace-nowrap">{boyDetails.latitude}</td>
+              <td className="py-3 px-4 whitespace-nowrap">{girlDetails.latitude}</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 font-semibold">Time Zone</td>
-              <td className="py-3 px-4">+{boyDetails.timeZone}</td>
-              <td className="py-3 px-4">+{girlDetails.timeZone}</td>
+              <td className="py-3 px-4 font-semibold whitespace-nowrap">Time Zone</td>
+              <td className="py-3 px-4 whitespace-nowrap">+{boyDetails.timeZone}</td>
+              <td className="py-3 px-4 whitespace-nowrap">+{girlDetails.timeZone}</td>
             </tr>
           </tbody>
         </table>
@@ -515,26 +516,26 @@ const MatchmakingPage = () => {
   const renderGunaTable = () => (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-8">
       <h3 className="text-2xl font-display font-semibold text-white mb-6">Ashtakoot Guna Milan</h3>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
         <table className="w-full text-white">
           <thead>
             <tr className="border-b border-white/20">
-              <th className="text-left py-3 px-4">Koot</th>
-              <th className="text-left py-3 px-4">Boy's Guna</th>
-              <th className="text-left py-3 px-4">Girl's Guna</th>
-              <th className="text-left py-3 px-4">Maximum Points</th>
-              <th className="text-left py-3 px-4">Obtained Points</th>
-              <th className="text-left py-3 px-4">Area of Life</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Koot</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Boy's Guna</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Girl's Guna</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Maximum Points</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Obtained Points</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Area of Life</th>
             </tr>
           </thead>
           <tbody>
             {gunaScores.map((guna, index) => (
               <tr key={index} className="border-b border-white/10 hover:bg-white/5">
-                <td className="py-3 px-4 font-semibold">{guna.guna}</td>
-                <td className="py-3 px-4">{guna.boy}</td>
-                <td className="py-3 px-4">{guna.girl}</td>
-                <td className="py-3 px-4">{guna.maximum}</td>
-                <td className="py-3 px-4">
+                <td className="py-3 px-4 font-semibold whitespace-nowrap">{guna.guna}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{guna.boy}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{guna.girl}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{guna.maximum}</td>
+                <td className="py-3 px-4 whitespace-nowrap">
                   <span className={`px-2 py-1 rounded text-sm font-semibold ${
                     guna.obtained === guna.maximum ? 'bg-green-500/20 text-green-300' :
                     guna.obtained >= guna.maximum * 0.7 ? 'bg-yellow-500/20 text-yellow-300' :
@@ -543,17 +544,17 @@ const MatchmakingPage = () => {
                     {guna.obtained}
                   </span>
                 </td>
-                <td className="py-3 px-4">{guna.areaOfLife}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{guna.areaOfLife}</td>
               </tr>
             ))}
           </tbody>
           <tfoot>
             <tr className="border-t-2 border-white/30 bg-white/5">
-              <td className="py-4 px-4 font-bold text-lg">Total</td>
+              <td className="py-4 px-4 font-bold text-lg whitespace-nowrap">Total</td>
               <td className="py-4 px-4"></td>
               <td className="py-4 px-4"></td>
-              <td className="py-4 px-4 font-bold text-lg">{matchingResult?.maxScore}</td>
-              <td className="py-4 px-4">
+              <td className="py-4 px-4 font-bold text-lg whitespace-nowrap">{matchingResult?.maxScore}</td>
+              <td className="py-4 px-4 whitespace-nowrap">
                 <span className="px-3 py-2 rounded-lg text-lg font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-white">
                   {matchingResult?.totalScore}
                 </span>
@@ -869,10 +870,10 @@ const MatchmakingPage = () => {
         {!showResults ? (
           <div>
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 leading-tight">
                 Match My Horoscope
               </h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto">
                 Find your perfect match with authentic Vedic astrology compatibility analysis
               </p>
             </div>

@@ -152,15 +152,15 @@ const LifePredictionPage = () => {
 
   const renderHeader = () => (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center space-x-3">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 mb-4">
+        <div className="flex items-center space-x-3 min-w-0">
           <Star className="h-8 w-8 text-yellow-400" />
           <div>
-            <h1 className="text-2xl font-display font-bold text-white">Welcome to Astro.com</h1>
-            <p className="text-white/70 text-sm">Life Predictions & Personality Analysis</p>
+            <h1 className="text-xl sm:text-2xl font-display font-bold text-white">Welcome to Astro.com</h1>
+            <p className="text-white/70 text-xs sm:text-sm">Life Predictions & Personality Analysis</p>
           </div>
         </div>
-        <div className="flex items-center space-x-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button className="flex items-center space-x-2 bg-white/10 text-white px-3 py-2 rounded-lg hover:bg-white/20 transition-colors">
             <Print className="h-4 w-4" />
             <span className="hidden sm:inline">Print</span>
@@ -173,9 +173,10 @@ const LifePredictionPage = () => {
             <Search className="h-4 w-4" />
             <span className="hidden sm:inline">Search</span>
           </button>
-          <button className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:shadow-xl transition-all">
+          <button className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 sm:px-4 py-2 rounded-lg hover:shadow-xl transition-all text-sm">
             <MessageCircle className="h-4 w-4" />
-            <span>Talk to Astrologer</span>
+            <span className="hidden sm:inline">Talk to Astrologer</span>
+            <span className="sm:hidden">Talk</span>
           </button>
         </div>
       </div>
@@ -509,10 +510,10 @@ const LifePredictionPage = () => {
       <h3 className="text-xl font-display font-semibold text-white mb-6">About Astro</h3>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
           <p className="text-white/80 leading-relaxed mb-6">
             Astro is India's leading astrology platform, providing accurate Vedic astrology services 
-            and predictions. With Dr. Roohi Jain's expertise, we offer comprehensive astrological solutions 
+          <p className="text-white/70 text-base sm:text-lg">
             for all your life questions including personality analysis, life predictions, and spiritual guidance.
           </p>
           
@@ -583,10 +584,10 @@ const LifePredictionPage = () => {
         <div className="max-w-7xl mx-auto">
           {renderHeader()}
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 leading-tight">
               Life Predictions
             </h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto">
               Discover your personality, life path, and future with personalized astrological insights
             </p>
           </div>
@@ -602,10 +603,10 @@ const LifePredictionPage = () => {
         <div className="max-w-7xl mx-auto">
           {renderHeader()}
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 leading-tight">
               Life Predictions
             </h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto">
               Select a person to view their detailed life predictions
             </p>
           </div>

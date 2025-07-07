@@ -55,13 +55,13 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({ onMenuToggle }) => {
         </div>
 
         {/* Center */}
-        <div className="flex-1 max-w-xs sm:max-w-md mx-4 sm:mx-8">
+        <div className="flex-1 max-w-xs sm:max-w-sm lg:max-w-md mx-2 sm:mx-4 lg:mx-8">
           <Link
             to="/daily"
-            className="flex items-center justify-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 sm:px-6 py-2 rounded-full hover:from-purple-600 hover:to-pink-600 transition-all text-sm sm:text-base shadow-lg hover:shadow-xl"
+            className="flex items-center justify-center space-x-1 sm:space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-2 sm:px-4 lg:px-6 py-2 rounded-full hover:from-purple-600 hover:to-pink-600 transition-all text-xs sm:text-sm lg:text-base shadow-lg hover:shadow-xl"
           >
-            <Calendar className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-            <span className="font-medium truncate">My Day Today</span>
+            <Calendar className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 flex-shrink-0" />
+            <span className="font-medium truncate">Today</span>
           </Link>
         </div>
 

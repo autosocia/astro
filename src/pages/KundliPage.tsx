@@ -628,29 +628,29 @@ const KundliPage = () => {
   const renderPlanetaryTable = () => (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-8">
       <h3 className="text-2xl font-display font-semibold text-white mb-6">Planetary Positions</h3>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
         <table className="w-full text-white">
           <thead>
             <tr className="border-b border-white/20">
-              <th className="text-left py-3 px-4">Planet</th>
-              <th className="text-left py-3 px-4">C/R</th>
-              <th className="text-left py-3 px-4">Rashi</th>
-              <th className="text-left py-3 px-4">Longitude</th>
-              <th className="text-left py-3 px-4">Nakshatra</th>
-              <th className="text-left py-3 px-4">Pada</th>
-              <th className="text-left py-3 px-4">Relation</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Planet</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">C/R</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Rashi</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Longitude</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Nakshatra</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Pada</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Relation</th>
             </tr>
           </thead>
           <tbody>
             {astrologyData?.planetaryPositions.map((planet: PlanetaryPosition, index: number) => (
               <tr key={index} className="border-b border-white/10 hover:bg-white/5">
-                <td className="py-3 px-4 font-semibold">{planet.planet}</td>
-                <td className="py-3 px-4">{planet.combust}</td>
-                <td className="py-3 px-4">{planet.rashi}</td>
-                <td className="py-3 px-4">{planet.longitude}</td>
-                <td className="py-3 px-4">{planet.nakshatra}</td>
-                <td className="py-3 px-4">{planet.pada}</td>
-                <td className="py-3 px-4">
+                <td className="py-3 px-4 font-semibold whitespace-nowrap">{planet.planet}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{planet.combust}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{planet.rashi}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{planet.longitude}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{planet.nakshatra}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{planet.pada}</td>
+                <td className="py-3 px-4 whitespace-nowrap">
                   <span className={`px-2 py-1 rounded text-xs ${
                     planet.relation === 'Enemy' ? 'bg-red-500/20 text-red-300' :
                     planet.relation === 'Friendly' ? 'bg-green-500/20 text-green-300' :
@@ -695,23 +695,23 @@ const KundliPage = () => {
       </div>
       
       {expandedDasha && (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
           <table className="w-full text-white">
             <thead>
               <tr className="border-b border-white/20">
-                <th className="text-left py-3 px-4">Planet</th>
-                <th className="text-left py-3 px-4">Start Date</th>
-                <th className="text-left py-3 px-4">End Date</th>
-                <th className="text-left py-3 px-4">Duration</th>
+                <th className="text-left py-3 px-4 whitespace-nowrap">Planet</th>
+                <th className="text-left py-3 px-4 whitespace-nowrap">Start Date</th>
+                <th className="text-left py-3 px-4 whitespace-nowrap">End Date</th>
+                <th className="text-left py-3 px-4 whitespace-nowrap">Duration</th>
               </tr>
             </thead>
             <tbody>
               {astrologyData?.vimshottariDasha.periods.map((period: DashaPeriod, index: number) => (
                 <tr key={index} className="border-b border-white/10 hover:bg-white/5">
-                  <td className="py-3 px-4 font-semibold">{period.planet}</td>
-                  <td className="py-3 px-4">{period.startDate}</td>
-                  <td className="py-3 px-4">{period.endDate}</td>
-                  <td className="py-3 px-4">{period.duration}</td>
+                  <td className="py-3 px-4 font-semibold whitespace-nowrap">{period.planet}</td>
+                  <td className="py-3 px-4 whitespace-nowrap">{period.startDate}</td>
+                  <td className="py-3 px-4 whitespace-nowrap">{period.endDate}</td>
+                  <td className="py-3 px-4 whitespace-nowrap">{period.duration}</td>
                 </tr>
               ))}
             </tbody>
@@ -754,23 +754,23 @@ const KundliPage = () => {
   const renderAvasthaTable = () => (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-8">
       <h3 className="text-2xl font-display font-semibold text-white mb-6">Avastha</h3>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
         <table className="w-full text-white">
           <thead>
             <tr className="border-b border-white/20">
-              <th className="text-left py-3 px-4">Planet</th>
-              <th className="text-left py-3 px-4">Jagrat</th>
-              <th className="text-left py-3 px-4">Baladi</th>
-              <th className="text-left py-3 px-4">Deeptadi</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Planet</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Jagrat</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Baladi</th>
+              <th className="text-left py-3 px-4 whitespace-nowrap">Deeptadi</th>
             </tr>
           </thead>
           <tbody>
             {astrologyData?.avasthaData.map((avastha: AvasthaData, index: number) => (
               <tr key={index} className="border-b border-white/10 hover:bg-white/5">
-                <td className="py-3 px-4 font-semibold">{avastha.planet}</td>
-                <td className="py-3 px-4">{avastha.jagrat}</td>
-                <td className="py-3 px-4">{avastha.baladi}</td>
-                <td className="py-3 px-4">{avastha.deeptadi}</td>
+                <td className="py-3 px-4 font-semibold whitespace-nowrap">{avastha.planet}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{avastha.jagrat}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{avastha.baladi}</td>
+                <td className="py-3 px-4 whitespace-nowrap">{avastha.deeptadi}</td>
               </tr>
             ))}
           </tbody>

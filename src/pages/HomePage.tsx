@@ -131,7 +131,7 @@ const HomePage = () => {
               <div className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-violet-200 transform perspective-1000 hover:scale-105 transition-all duration-300">
                 <div className="relative overflow-hidden">
                   <img
-                    src="/WhatsApp Image 2025-07-04 at 19.05.57.jpeg"
+                    src="/WhatsApp Image 2025-07-04 at 19.06.01.jpeg"
                     alt="Dr. Roohi Jain on TV"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -158,7 +158,7 @@ const HomePage = () => {
               <div className="group bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 transform perspective-1000 hover:scale-105 transition-all duration-300">
                 <div className="relative overflow-hidden">
                   <img
-                    src="/WhatsApp Image 2025-07-04 at 19.06.00 (1).jpeg"
+                    src="/WhatsApp Image 2025-07-04 at 19.06.00 copy.jpeg"
                     alt="Dr. Roohi Jain Professional Portrait"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
